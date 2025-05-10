@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById("filmes-container");
 
@@ -14,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
           const img = document.createElement("img");
           img.src = filme.foto;
           img.width = 300;
+          img.height = 450;
           img.alt = filme.nome;
           img.style.cursor = "pointer";
           container.appendChild(img);
@@ -122,8 +124,18 @@ document.addEventListener("DOMContentLoaded", () => {
         .then((result) => {
           console.log("Cadastro bem-sucedido:", result);
 
-          mensagemStatus.textContent = "Cadastro realizado com sucesso!";
-          mensagemStatus.style.color = "green";
+          Swal.fire({
+          title: "Sucesso!",
+          text: "Cadastro bem sucedido!",
+          icon: "success",
+          timer: 2000, // Fecha automaticamente após 2 segundos
+          showConfirmButton: false // Remove botão "OK"
+        });
+
+        setTimeout(() => {
+          window.location.href = "home.html";
+        }, 2000); // mesmo tempo do timer acima
+
           cadastroForm.reset();
 
           if (tipoSelect) {

@@ -176,3 +176,7 @@ select {
   font-weight: bold;
   min-height: 1.2em;
 }
+
+#duracao{
+  background-color: darkgray;
+}
