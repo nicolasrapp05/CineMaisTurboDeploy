@@ -1,3 +1,4 @@
+using CineMaisTurbo.Models;
 using CineTurbo.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -7,7 +8,8 @@ namespace CineTurbo.Data
     {
         public AppDbContext(DbContextOptions options) : base(options) {}
 
-        public DbSet<Filme> CineTurboDB { get; set; }
+        public DbSet<Filme> FilmesDB { get; set; }
+        public DbSet<Serie> SeriesDB { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

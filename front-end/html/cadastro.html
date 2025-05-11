@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="icon" type="image/png" href="../images/cine+turbo img.png" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro - Cine+Turbo</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/eb6608b6fd.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+
+<body>
+    <header>
+        <nav class="nav-menu">
+            <div class="logo">
+                <img width="200px" src="../images/logo.png" alt="Cine+Turbo Logo" />
+            </div>
+            <div class="menu-links">
+                <a href="home.html"><i class="fa-solid fa-house"></i>&nbsp;Home</a>
+                <a href="filmes.html"><i class="fa-solid fa-clapperboard"></i>&nbsp;Filmes</a>
+                <a href="series.html"><i class="fa-solid fa-film"></i>&nbsp;Séries</a>
+                <a href="ranking.html"><i class="fa-solid fa-ranking-star"></i>&nbsp;Ranking</a>
+                <a href="cadastro.html"><i class="fa-solid fa-circle-plus"></i>&nbsp;Cadastro</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="cadastro-container">
+        <h2>Cadastro de Filmes e Séries</h2>
+
+        <form id="cadastroForm">
+            <div class="form-group">
+                <label for="tipo">Tipo:</label>
+                <select id="tipo" name="tipo">
+                    <option value="filmes">Filme</option>
+                    <option value="series">Série</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" />
+            </div>
+
+            <div class="form-group">
+                <label for="sinopse">Sinopse:</label>
+                <textarea id="sinopse" name="sinopse" rows="4"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="avaliacaoImdb">Avaliação IMDb (0-10):</label>
+                <input type="number" id="avaliacaoImdb" name="avaliacaoImdb" min="0" max="10" step="1" />
+            </div>
+
+            <div class="form-group">
+                <label for="avaliacaoTomates">Avaliação Rotten Tomatoes (0-100):</label>
+                <input type="number" id="avaliacaoTomates" name="avaliacaoTomates" min="0" max="100" step="1" />
+            </div>
+
+            <div class="form-group">
+                <label for="foto">URL da Foto/Poster:</label>
+                <input type="url" id="foto" name="foto" placeholder="https://exemplo.com/imagem.jpg" />
+            </div>
+
+            <div class="form-group">
+                <label for="genero">Gênero:</label>
+                <!-- <input type="text" id="genero" name="genero" /> -->
+                 <select name="genero" id="genero">
+                    <option value="" disabled selected>Selecione uma opção</option>
+                    <option value="Ação">Ação</option>
+                    <option value="Aventura">Aventura</option>
+                    <option value="Animação">Animação</option>
+                    <option value="Comédia">Comédia</option>
+                    <option value="Documentário">Documentário</option>
+                    <option value="Drama">Drama</option>
+                    <option value="Fantasia">Fantasia</option>
+                    <option value="Faroeste">Faroeste</option>
+                    <option value="Ficção Científica">Ficção Científica</option>
+                    <option value="Romance">Romance</option>
+                    <option value="Suspense">Suspense</option>
+                    <option value="Terror">Terror</option>
+                </select>
+
+            </div>
+
+            <div class="form-group">
+                <label for="avaliacao">Sua Avaliação (0-5):</label>
+                <input type="number" id="avaliacao" name="avaliacao" min="0" max="5" step="1" />
+            </div>
+
+             <div class="form-group">
+                <label for="lancamento">Data de Lançamento:</label>
+                <input type="date" id="lancamento" name="lancamento" />
+            </div>
+
+            <div id="campoDuracao" class="form-group">
+                <label for="duracao">Duração do filme:</label>
+                <input type="time" id="duracao" name="duracao" step="60" />
+            </div>
+
+
+            <div id="campoSerie" class="form-group-hidden">
+                 <div class="form-group">
+                     <label for="temporadas">Temporadas:</label>
+                     <input type="number" id="temporadas" name="temporadas" min="1" />
+                 </div>
+                 <div class="form-group">
+                     <label for="episodios">Episódios (total):</label>
+                     <input type="number" id="episodios" name="episodios" min="1" />
+                 </div>
+            </div>
+
+            <button type="submit" class="btn-submit">Cadastrar</button>
+
+            <p id="mensagem" class="mensagem-status"></p>
+        </form>
+    </main>
+
+    <script src="../scritp.js"></script>
+</body>
+</html>

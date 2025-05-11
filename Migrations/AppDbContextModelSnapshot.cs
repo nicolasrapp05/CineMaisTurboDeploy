@@ -19,6 +19,47 @@ namespace CineTurbo.Migrations
                 .HasAnnotation("ProductVersion", "7.0.7")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
+            modelBuilder.Entity("CineMaisTurbo.Models.Serie", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int>("Avaliacao")
+                        .HasColumnType("int");
+
+                    b.Property<int>("AvaliacaoImdb")
+                        .HasColumnType("int");
+
+                    b.Property<int>("AvaliacaoTomates")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Episodios")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Foto")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Genero")
+                        .HasColumnType("longtext");
+
+                    b.Property<DateTime>("Lancamento")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("Nome")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Sinopse")
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("Temporadas")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("SeriesDB");
+                });
+
             modelBuilder.Entity("CineTurbo.Models.Filme", b =>
                 {
                     b.Property<int>("Id")
@@ -54,7 +95,7 @@ namespace CineTurbo.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("CineTurboDB");
+                    b.ToTable("FilmesDB");
 
                     b.HasData(
                         new
@@ -64,7 +105,7 @@ namespace CineTurbo.Migrations
                             AvaliacaoImdb = 87,
                             AvaliacaoTomates = 88,
                             Duracao = "2h 16min",
-                            Foto = "matrix.jpg",
+                            Foto = "https://media.themoviedb.org/t/p/w600_and_h900_bestv2/1aadn0aD7h1VKq4yap2uKl7cTSL.jpg",
                             Genero = "Ficção Científica",
                             Lancamento = new DateTime(1999, 3, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Nome = "Matrix",
@@ -74,10 +115,88 @@ namespace CineTurbo.Migrations
                         {
                             Id = 2,
                             Avaliacao = 5,
+                            AvaliacaoImdb = 87,
+                            AvaliacaoTomates = 88,
+                            Duracao = "2h 16min",
+                            Foto = "https://www.themoviedb.org/t/p/w1280/9e3Dz7aCANy5aRUQF745IlNloJ1.jpg",
+                            Genero = "Ficção Científica",
+                            Lancamento = new DateTime(1999, 3, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Nome = "Matrix",
+                            Sinopse = "Um hacker descobre a verdade sobre sua realidade."
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Avaliacao = 5,
+                            AvaliacaoImdb = 87,
+                            AvaliacaoTomates = 88,
+                            Duracao = "2h 16min",
+                            Foto = "https://media.themoviedb.org/t/p/w600_and_h900_bestv2/4lj1ikfsSmMZNyfdi8R8Tv5tsgb.jpg",
+                            Genero = "Ficção Científica",
+                            Lancamento = new DateTime(1999, 3, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Nome = "Matrix",
+                            Sinopse = "Um hacker descobre a verdade sobre sua realidade."
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Avaliacao = 5,
                             AvaliacaoImdb = 88,
                             AvaliacaoTomates = 91,
                             Duracao = "2h 58min",
-                            Foto = "sociedade-do-anel.jpg",
+                            Foto = "https://media.themoviedb.org/t/p/w600_and_h900_bestv2/qVf6lTFzDsBZUbYbk8m9dk9SipX.jpg",
+                            Genero = "Fantasia",
+                            Lancamento = new DateTime(2001, 12, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Nome = "O Senhor dos Anéis: A Sociedade do Anel",
+                            Sinopse = "Um hobbit embarca em uma jornada épica para destruir um anel maligno."
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Avaliacao = 5,
+                            AvaliacaoImdb = 88,
+                            AvaliacaoTomates = 91,
+                            Duracao = "2h 58min",
+                            Foto = "https://media.themoviedb.org/t/p/w600_and_h900_bestv2/x5hsAHiwLQrM7jlSZzR7AdWZquk.jpg",
+                            Genero = "Fantasia",
+                            Lancamento = new DateTime(2001, 12, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Nome = "O Senhor dos Anéis: A Sociedade do Anel",
+                            Sinopse = "Um hobbit embarca em uma jornada épica para destruir um anel maligno."
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Avaliacao = 5,
+                            AvaliacaoImdb = 88,
+                            AvaliacaoTomates = 91,
+                            Duracao = "2h 58min",
+                            Foto = "https://media.themoviedb.org/t/p/w600_and_h900_bestv2/TpcNor0WkmD1SBO3n3tlkQqmOf.jpg",
+                            Genero = "Fantasia",
+                            Lancamento = new DateTime(2001, 12, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Nome = "O Senhor dos Anéis: A Sociedade do Anel",
+                            Sinopse = "Um hobbit embarca em uma jornada épica para destruir um anel maligno."
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Avaliacao = 5,
+                            AvaliacaoImdb = 88,
+                            AvaliacaoTomates = 91,
+                            Duracao = "2h 58min",
+                            Foto = "https://media.themoviedb.org/t/p/w600_and_h900_bestv2/wd9fppMrD3KbH8jAMTqCF28QejD.jpg",
+                            Genero = "Fantasia",
+                            Lancamento = new DateTime(2001, 12, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Nome = "O Senhor dos Anéis: A Sociedade do Anel",
+                            Sinopse = "Um hobbit embarca em uma jornada épica para destruir um anel maligno."
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Avaliacao = 5,
+                            AvaliacaoImdb = 88,
+                            AvaliacaoTomates = 91,
+                            Duracao = "2h 58min",
+                            Foto = "https://media.themoviedb.org/t/p/w600_and_h900_bestv2/9e0Yftt4svEI268iogQQdMXvng6.jpg",
                             Genero = "Fantasia",
                             Lancamento = new DateTime(2001, 12, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Nome = "O Senhor dos Anéis: A Sociedade do Anel",
