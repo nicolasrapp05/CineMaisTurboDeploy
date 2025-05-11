@@ -1,9 +1,8 @@
-
 $(document).ready(function () {
     
     $.ajax({
         type: "GET",
-        url: "http://localhost:5018/api/filmes?genero=Fantasia",
+        url: "http://localhost:5018/api/filmes?genero=Acao",
         dataType: "json",
         success: function (response) {
             let html = ''
@@ -44,6 +43,96 @@ $(document).ready(function () {
             console.error('erro meu');
         }
     });
+    
+    $.ajax({
+        type: "GET",
+        url: "http://localhost:5018/api/filmes?genero=Aventura",
+        dataType: "json",
+        success: function (response) {
+            let html = ''
+    
+            response.forEach(filme => {
+                html +=`
+                <div class="swiper-slide">
+                    <img width=200 src="${filme.foto}" alt="Filme 1">
+                </div>
+                `;
+            });
+    
+            $('#carrossel-aventura').append(html);
+        },
+        error: function() {
+            console.error('erro meu');
+        }
+    });
+
+    $.ajax({
+        type: "GET",
+        url: "http://localhost:5018/api/filmes?genero=Animacao",
+        dataType: "json",
+        success: function (response) {
+            let html = ''
+    
+            response.forEach(filme => {
+                html +=`
+                <div class="swiper-slide">
+                    <img width=200 src="${filme.foto}" alt="Filme 1">
+                </div>
+                `;
+            });
+    
+            $('#carrossel-animacao').append(html);
+        },
+        error: function() {
+            console.error('erro meu');
+        }
+    });
+    
+    $.ajax({
+        type: "GET",
+        url: "http://localhost:5018/api/filmes?genero=Comedia",
+        dataType: "json",
+        success: function (response) {
+            let html = ''
+    
+            response.forEach(filme => {
+                html +=`
+                <div class="swiper-slide">
+                    <img width=200 src="${filme.foto}" alt="Filme 1">
+                </div>
+                `;
+            });
+    
+            $('#carrossel-comedia').append(html);
+        },
+        error: function() {
+            console.error('erro meu');
+        }
+    });
+    
+    $.ajax({
+        type: "GET",
+        url: "http://localhost:5018/api/filmes?genero=Documentario",
+        dataType: "json",
+        success: function (response) {
+            let html = ''
+    
+            response.forEach(filme => {
+                html +=`
+                <div class="swiper-slide">
+                    <img width=200 src="${filme.foto}" alt="Filme 1">
+                </div>
+                `;
+            });
+    
+            $('#carrossel-documentario').append(html);
+        },
+        error: function() {
+            console.error('erro meu');
+        }
+    });
+
+    
 
     // $.ajax({
     // type: "GET",

@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="icon" type="image/png" href="../images/cine+turbo img.png" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -69,9 +71,24 @@
                 <input type="url" id="foto" name="foto" placeholder="https://exemplo.com/imagem.jpg" />
             </div>
 
-            <div class="form-group">
+             <div class="form-group">
                 <label for="genero">Gênero:</label>
-                <input type="text" id="genero" name="genero" />
+                 <select name="genero" id="genero">
+                    <option value="" disabled selected>Selecione uma opção</option>
+                    <option value="Acao">Ação</option>
+                    <option value="Aventura">Aventura</option>
+                    <option value="Animação">Animação</option>
+                    <option value="Comedia">Comédia</option>
+                    <option value="Documentario">Documentário</option>
+                    <option value="Drama">Drama</option>
+                    <option value="Fantasia">Fantasia</option>
+                    <option value="Faroeste">Faroeste</option>
+                    <option value="FiccaoCientifica">Ficção Científica</option>
+                    <option value="Romance">Romance</option>
+                    <option value="Suspense">Suspense</option>
+                    <option value="Terror">Terror</option>
+                </select>
+
             </div>
 
             <div class="form-group">
@@ -85,8 +102,8 @@
             </div>
 
             <div id="campoDuracao" class="form-group">
-                <label for="duracao">Duração (ex: 1h 30m):</label>
-                <input type="text" id="duracao" name="duracao" />
+                <label for="duracao">Duração do filme:</label>
+                <input type="time" id="duracao" name="duracao" step="60" />
             </div>
 
             <div id="campoSerie" class="form-group-hidden">
@@ -100,12 +117,13 @@
                  </div>
             </div>
 
-            <button type="submit" class="btn-submit">Cadastrar</button>
+            <button type="submit" class="btn-submit bg-success text-white">Cadastrar</button>
 
             <p id="mensagem" class="mensagem-status"></p>
         </form>
     </main>
 
     <script src="../scritp.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

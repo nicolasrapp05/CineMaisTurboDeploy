@@ -50,49 +50,120 @@
 <body>
   <header>
     <nav class="nav-menu">
-      <div class="logo">
-        <img width="200px" src="../images/logo.png" alt="" />
+      <div class="logo"><a href="home.html"><img class="logo" width="200px" src="../images/logo.png" alt="" /></a>
+        
       </div>
       <div class="menu-links">
-        <a href="home.html"><i class="fa-solid fa-house"></i>&nbsp;Home</a>
-        <a href="filmes.html"><i class="fa-solid fa-clapperboard"></i>&nbsp;Filmes</a>
-        <a href="series.html"><i class="fa-solid fa-film"></i>&nbsp;Séries</a>
-        <a href="ranking.html"><i class="fa-solid fa-ranking-star"></i>&nbsp;Ranking</a>
-        <a href="cadastro.html"><i class="fa-solid fa-circle-plus"></i>&nbsp;Cadastro</a>
+        <a href="home.html"><i class="fa-solid fa-house"></i>&nbsp;&nbsp;Home</a>
+        <a href="filmes.html"><i class="fa-solid fa-clapperboard"></i>&nbsp;&nbsp;Filmes</a>
+        <a href="series.html"><i class="fa-solid fa-film"></i>&nbsp;&nbsp;Séries</a>
+        <a href="ranking.html"><i class="fa-solid fa-ranking-star"></i>&nbsp;&nbsp;Ranking</a>
+        <a href="cadastro.html"><i class="fa-solid fa-circle-plus"></i>&nbsp;&nbsp;Cadastro</a>
       </div>
     </nav>
   </header>
 
-    <div class="text-center my-5">
-      <h2 class="fw-bold text-uppercase text-white border-bottom border-primary pb-2 px-3 d-inline-block"
+    <div class="container my-5">
+      <h2 class="fw-bold text-uppercase text-white border-bottom border-danger pb-2 px-3 d-inline-block"
+          style="font-family: 'Inter', sans-serif; font-size: 2.5rem; letter-spacing: 2px;">
+        <i class="fa-solid fa-fire"></i>&nbsp;Destaque
+      </h2>
+
+      <div class="row align-items-center mt-4 g-5">
+        <div class="col-md-6 text-center">
+          <img class="img-fluid rounded shadow" src="https://herohaven.co.uk/cdn/shop/articles/Thunderbolts_-_Concept_Art.webp?v=1722963856" alt="Thunderbolts">
+        </div>
+
+        <div class="col-md-6 text-white text-start">
+          <h1 class="fw-bold text-uppercase border-bottom border-danger pb-2 mb-3 d-inline-block">Thunderbolts*</h1>
+          <p style="font-size: 1.05rem; line-height: 1.7;">
+            <strong>Thunderbolts*</strong> é um filme estadunidense de super-herói de 2025 baseado na equipe ficcional de mesmo nome, da Marvel Comics. Produzido pela Marvel Studios e distribuído pela Walt Disney Studios Motion Pictures, é o trigésimo sexto filme do Universo Cinematográfico Marvel. O filme é dirigido por Jake Schreier, com roteiro de Eric Pearson e Joanna Calo, e estrelado por um elenco que inclui Florence Pugh, Sebastian Stan, David Harbour e Julia Louis-Dreyfus. Um grupo de anti-heróis é pego em uma armadilha mortal e forçado a trabalhar juntos em uma missão perigosa.
+          </p>
+        </div>
+      </div>
+    </div>
+  
+     <h1 style="background-color: white;
+    color: black;
+    align-items: end;
+    padding: 20px;
+    text-align: start;">GÊNEROS</h1>
+
+  <div class="text-center my-5">
+
+    <h2 class="fw-bold text-uppercase text-white border-bottom border-danger pb-2 px-3 d-inline-block"
       style="font-family: 'Inter', sans-serif; font-size: 2.5rem; letter-spacing: 2px;">
-      Fantasia
+      <i class="fa-solid fa-jedi"></i>&nbsp;Ficção Científica
     </h2>
 
-    <div id="filmes-fantasia" class="mt-4">
+    <div id="filmes-ficcaoCientifica" class="mt-4">
       <div class="swiper">
-        <div class="swiper-wrapper" id="carrossel-fantasia">
-          <!-- Slides serão inseridos aqui -->
+        <div class="swiper-wrapper" id="carrossel-ficcaoCientifica">
         </div>
-        <!-- Navegação -->
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
-      </div>
+      </div>  
+    </div>
+  </div>
+  
+  <div class="text-center my-5">
+    <h2 class="fw-bold text-uppercase text-white border-bottom border-secondary pb-2 px-3 d-inline-block"
+      style="font-family: 'Inter', sans-serif; font-size: 2.5rem; letter-spacing: 2px;">
+      <i class="fa-solid fa-compass"></i>&nbsp;Aventura
+    </h2>
+
+    <div id="filmes-aventura" class="mt-4">
+      <div class="swiper">
+        <div class="swiper-wrapper" id="carrossel-aventura">
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>  
+    </div>
+  </div>
+
+  <div class="text-center my-5">
+    <h2 class="fw-bold text-uppercase text-white border-bottom border-warning pb-2 px-3 d-inline-block"
+      style="font-family: 'Inter', sans-serif; font-size: 2.5rem; letter-spacing: 2px;">
+      <i class="fa-solid fa-hat-wizard"></i>&nbsp;Animação
+    </h2>
+
+    <div id="filmes-animacao" class="mt-4">
+      <div class="swiper">
+        <div class="swiper-wrapper" id="carrossel-animacao">
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>  
+    </div>
+  </div>
+  
+  <div class="text-center my-5">
+    <h2 class="fw-bold text-uppercase text-white border-bottom border-primary pb-2 px-3 d-inline-block"
+      style="font-family: 'Inter', sans-serif; font-size: 2.5rem; letter-spacing: 2px;">
+      <i class="fa-solid fa-masks-theater"></i>&nbsp;Comédia
+    </h2>
+
+    <div id="filmes-comedia" class="mt-4">
+      <div class="swiper">
+        <div class="swiper-wrapper" id="carrossel-comedia">
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>  
     </div>
   </div>
   
   <div class="text-center my-5">
     <h2 class="fw-bold text-uppercase text-white border-bottom border-danger pb-2 px-3 d-inline-block"
       style="font-family: 'Inter', sans-serif; font-size: 2.5rem; letter-spacing: 2px;">
-      Ficção Científica
+      <i class="fa-solid fa-book"></i>&nbsp;Documentário
     </h2>
 
-    <div id="filmes-fantasia" class="mt-4">
+    <div id="filmes-documentario" class="mt-4">
       <div class="swiper">
-        <div class="swiper-wrapper" id="carrossel-ficcaoCientifica">
-          <!-- Slides serão inseridos aqui -->
+        <div class="swiper-wrapper" id="carrossel-documentario">
         </div>
-        <!-- Navegação -->
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
       </div>  

@@ -181,3 +181,5 @@ C:\_ws\CineMaisTurbo\obj\Debug\net9.0\refint\CineTurbo.dll
 C:\_ws\CineMaisTurbo\obj\Debug\net9.0\CineTurbo.pdb
 C:\_ws\CineMaisTurbo\obj\Debug\net9.0\CineTurbo.genruntimeconfig.cache
 C:\_ws\CineMaisTurbo\obj\Debug\net9.0\ref\CineTurbo.dll
+C:\Users\guilh\Documents\CineMaisTurbo\CineMaisTurbo\bin\Debug\net9.0\package-lock.json
+C:\Users\guilh\Documents\CineMaisTurbo\CineMaisTurbo\bin\Debug\net9.0\package.json

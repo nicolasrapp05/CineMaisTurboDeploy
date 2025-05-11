@@ -63,17 +63,33 @@
     border-radius: 8px;
   }
   
-  #filmes-container img {
+  .logo {
+    transition: none !important;
+    border-radius: 0px;
+  }
+
+  img {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border-radius: 10px;
   }
   
-  #filmes-container img:hover {
+  /* #filmes-container img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); 
+    cursor: pointer;
+  } */
+
+  img:hover {
     transform: scale(1.1);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); 
     cursor: pointer;
   }
 
+  .logo{
+    transform: none !important;
+    box-shadow: none; 
+    cursor: pointer;
+  }
   
 /* Cadastro */
 
