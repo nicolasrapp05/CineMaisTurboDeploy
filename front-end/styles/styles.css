@@ -13,17 +13,18 @@
     flex-direction: column;
   }
   
-  header {
-    background-color: white;
+  /* header {
+    background-color: black;
     padding: 0 40px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-  }
+  } */
   
   .nav-menu {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    padding: 44px;
   }
   
   .logo img {
@@ -39,15 +40,15 @@
   }
   
   .menu-links a {
-    color: black;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s;
-  }
-  
-  .menu-links a:hover {
-    color: red;
-  }
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.menu-links a:hover {
+  color: #F0B930;
+}
+
   
   .image-grid {
     padding: 40px;
