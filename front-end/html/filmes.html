@@ -15,7 +15,6 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
 
   <style>
-
     .fade-in {
       opacity: 0;
       transform: translateY(20px);
@@ -93,13 +92,12 @@
       height: auto;
       max-height: 90vh;
       overflow-y: auto;
-      background: linear-gradient(rgba(0,0,0,0.92), rgba(0,0,0,0.92));
+      background: linear-gradient(rgba(0, 0, 0, 0.92), rgba(0, 0, 0, 0.92));
       background-size: cover;
       background-position: center;
       border-radius: 10px;
       padding: 0;
     }
-
   </style>
 </head>
 
@@ -113,11 +111,6 @@
 
 
 
-      </div>
-      <div class="lightsaber horizontal">
-        <label class="hilt" for="sabre-toggle"></label>
-        <input type="checkbox" id="sabre-toggle">
-        <div class="blade"></div>
       </div>
 
 
@@ -232,7 +225,7 @@
     </div>
   </div>
 
-  <div class="text-center my-5">
+  <div class="text-center fade-in my-5">
     <h2 class="fw-bold text-uppercase text-white border-bottom border-danger pb-2 px-3 d-inline-block"
       style="font-family: 'Inter', sans-serif; font-size: 2.5rem; letter-spacing: 2px;">
       <i class="fa-solid fa-book"></i>&nbsp;Documentário
@@ -305,19 +298,19 @@
     animateStars();
 
     const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target); // remove observador após animar
-      }
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target); // remove observador após animar
+        }
+      });
+    }, {
+      threshold: 0.1
     });
-  }, {
-    threshold: 0.1
-  });
 
-  document.querySelectorAll('.fade-in').forEach(element => {
-    observer.observe(element);
-  });
+    document.querySelectorAll('.fade-in').forEach(element => {
+      observer.observe(element);
+    });
 
 
   </script>
