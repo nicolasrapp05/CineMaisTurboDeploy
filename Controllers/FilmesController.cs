@@ -72,16 +72,27 @@ namespace CineTurbo.Controllers
         {
             var filmeExistente = await _appDbContext.FilmesDB.FindAsync(id);
 
-            if (filmeExistente == null) {
+            if (filmeExistente == null)
+            {
                 return NotFound("Filme não encontrado!");
             }
 
-            _appDbContext.Entry(filmeExistente).CurrentValues.SetValues(filmeAtualizado);
+            filmeExistente.Nome = filmeAtualizado.Nome;
+            filmeExistente.Sinopse = filmeAtualizado.Sinopse;
+            filmeExistente.Foto = filmeAtualizado.Foto;
+            filmeExistente.Genero = filmeAtualizado.Genero;
+            filmeExistente.Avaliacao = filmeAtualizado.Avaliacao;
+            filmeExistente.AvaliacaoImdb = filmeAtualizado.AvaliacaoImdb;
+            filmeExistente.AvaliacaoTomates = filmeAtualizado.AvaliacaoTomates;
+            filmeExistente.Duracao = filmeAtualizado.Duracao;
+            filmeExistente.Lancamento = filmeAtualizado.Lancamento;
 
             await _appDbContext.SaveChangesAsync();
 
-            return StatusCode(201, filmeAtualizado);
+            return Ok(filmeExistente);
         }
+
+
 
         [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteFilme(int id)

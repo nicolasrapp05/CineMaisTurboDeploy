@@ -12,7 +12,7 @@ $(document).ready(function () {
             response.forEach(filme => {
                 html +=`
                         <div>
-                            <img width=300 src="${filme.foto}" alt="Filme 1">
+                            <img data-id="${filme.id}" width=300 src="${filme.foto}" alt="Filme 1">
                         </div>
                     `;
             });

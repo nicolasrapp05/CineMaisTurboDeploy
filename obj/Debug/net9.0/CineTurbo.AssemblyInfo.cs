@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CineTurbo")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+111eef39c2f45304a9fdacd1ef8e7e57ee19dae7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+18c6eaf7464655fea3c533dd0ff5dbcc63599749")]
 [assembly: System.Reflection.AssemblyProductAttribute("CineTurbo")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CineTurbo")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
