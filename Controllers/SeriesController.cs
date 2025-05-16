@@ -34,11 +34,26 @@ namespace CineTurbo.Controllers
         }
 
         // GET: api/series
+        // [HttpGet]
+        // public ActionResult<IEnumerable<Serie>> GetTodosSeries()
+        // {
+        //     var series = _appDbContext.SeriesDB.ToList();
+        //     return Ok(series);
+        // }
+
         [HttpGet]
-        public ActionResult<IEnumerable<Serie>> GetTodosSeries()
+        public ActionResult<IEnumerable<Filme>> GetSeries([FromQuery] string? genero)
         {
-            var series = _appDbContext.SeriesDB.ToList();
-            return Ok(series);
+            var query = _appDbContext.SeriesDB.AsQueryable();
+
+            if (!string.IsNullOrWhiteSpace(genero))
+            {
+                query = query.Where(s => s.Genero.Trim().ToLower() == genero.Trim().ToLower());
+
+
+            }
+
+            return Ok(query.ToList());
         }
         
         [HttpGet("{id}")]
