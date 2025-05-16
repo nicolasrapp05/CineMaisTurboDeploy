@@ -795,6 +795,19 @@ namespace CineTurbo.Data
                     Avaliacao = 5,
                     Duracao = "2h 7min",
                     Lancamento = new DateTime(2018, 6, 8)
+                },
+                new Filme
+                {
+                    Id = 61,
+                    Nome = "Passageiros",
+                    Sinopse = "Uma nave espacial viajando para uma colônia em um distante planeta e transportando milhares de pessoas tem um mau funcionamento em suas câmaras do sono. Como resultado, dois passageiros são despertados 90 anos antes..",
+                    AvaliacaoImdb = 70,
+                    AvaliacaoTomates = 30,
+                    Foto = "https://media.themoviedb.org/t/p/w600_and_h900_bestv2/4ttmnglFa2WxDK3yBkMX1VlpkTo.jpg",
+                    Genero = "Romance",
+                    Avaliacao = 4,
+                    Duracao = "1h 56min",
+                    Lancamento = new DateTime(2007, 1, 5)
                 }
             );
         }

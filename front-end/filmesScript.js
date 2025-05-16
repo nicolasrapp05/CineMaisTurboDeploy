@@ -15,7 +15,7 @@ $(document).ready(function () {
                 `;
             });
 
-            $('#carrossel-fantasia').append(html);
+            $('#carrossel-acao').append(html);
         },
         error: function () {
             console.error('erro meu');
@@ -131,6 +131,162 @@ $(document).ready(function () {
             console.error('erro meu');
         }
     });
+    
+    $.ajax({
+        type: "GET",
+        url: "http://localhost:5018/api/filmes?genero=Acao",
+        dataType: "json",
+        success: function (response) {
+            let html = ''
+
+            response.forEach(filme => {
+                html += `
+                <div class="swiper-slide">
+                    <img data-id="${filme.id}" class="filme-img" width=200 src="${filme.foto}" alt="${filme.nome}">
+                </div>
+                `;
+            });
+
+            $('#carrossel-acao').append(html);
+        },
+        error: function () {
+            console.error('erro meu');
+        }
+    });
+    
+    $.ajax({
+        type: "GET",
+        url: "http://localhost:5018/api/filmes?genero=Drama",
+        dataType: "json",
+        success: function (response) {
+            let html = ''
+
+            response.forEach(filme => {
+                html += `
+                <div class="swiper-slide">
+                    <img data-id="${filme.id}" class="filme-img" width=200 src="${filme.foto}" alt="${filme.nome}">
+                </div>
+                `;
+            });
+
+            $('#carrossel-drama').append(html);
+        },
+        error: function () {
+            console.error('erro meu');
+        }
+    });
+    
+    $.ajax({
+        type: "GET",
+        url: "http://localhost:5018/api/filmes?genero=Fantasia",
+        dataType: "json",
+        success: function (response) {
+            let html = ''
+
+            response.forEach(filme => {
+                html += `
+                <div class="swiper-slide">
+                    <img data-id="${filme.id}" class="filme-img" width=200 src="${filme.foto}" alt="${filme.nome}">
+                </div>
+                `;
+            });
+
+            $('#carrossel-fantasia').append(html);
+        },
+        error: function () {
+            console.error('erro meu');
+        }
+    });
+    
+    $.ajax({
+        type: "GET",
+        url: "http://localhost:5018/api/filmes?genero=Faroeste",
+        dataType: "json",
+        success: function (response) {
+            let html = ''
+
+            response.forEach(filme => {
+                html += `
+                <div class="swiper-slide">
+                    <img data-id="${filme.id}" class="filme-img" width=200 src="${filme.foto}" alt="${filme.nome}">
+                </div>
+                `;
+            });
+
+            $('#carrossel-faroeste').append(html);
+        },
+        error: function () {
+            console.error('erro meu');
+        }
+    });
+    
+    $.ajax({
+        type: "GET",
+        url: "http://localhost:5018/api/filmes?genero=Romance",
+        dataType: "json",
+        success: function (response) {
+            let html = ''
+
+            response.forEach(filme => {
+                html += `
+                <div class="swiper-slide">
+                    <img data-id="${filme.id}" class="filme-img" width=200 src="${filme.foto}" alt="${filme.nome}">
+                </div>
+                `;
+            });
+
+            $('#carrossel-romance').append(html);
+        },
+        error: function () {
+            console.error('erro meu');
+        }
+    });
+    
+    $.ajax({
+        type: "GET",
+        url: "http://localhost:5018/api/filmes?genero=Terror",
+        dataType: "json",
+        success: function (response) {
+            let html = ''
+
+            response.forEach(filme => {
+                html += `
+                <div class="swiper-slide">
+                    <img data-id="${filme.id}" class="filme-img" width=200 src="${filme.foto}" alt="${filme.nome}">
+                </div>
+                `;
+            });
+
+            $('#carrossel-terror').append(html);
+        },
+        error: function () {
+            console.error('erro meu');
+        }
+    });
+    
+    $.ajax({
+        type: "GET",
+        url: "http://localhost:5018/api/filmes?genero=Suspense",
+        dataType: "json",
+        success: function (response) {
+            let html = ''
+
+            response.forEach(filme => {
+                html += `
+                <div class="swiper-slide">
+                    <img data-id="${filme.id}" class="filme-img" width=200 src="${filme.foto}" alt="${filme.nome}">
+                </div>
+                `;
+            });
+
+            $('#carrossel-suspense').append(html);
+        },
+        error: function () {
+            console.error('erro meu');
+        }
+    });
+
+    
 
     $(document).on('click', '.filme-img', function () {
         const filmeId = $(this).data('id');
