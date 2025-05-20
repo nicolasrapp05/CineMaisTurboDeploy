@@ -130,7 +130,7 @@
   </div>
 
   <div class="swiper destaque col-md-11 mt-5" style="width: 1381px;"> 
-    <div class="swiper-wrapper mb-5 col-md-6" id="carrossel-ficcaoCientifica">
+    <div class="swiper-wrapper mb-5 col-md-6">
 
       <div class="swiper-slide">
         <div class="row align-items-center">
@@ -384,24 +384,30 @@
 
   <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
   <script>
-    new Swiper('.swiper', {
-      slidesPerView: 4,
-      spaceBetween: 30,
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-    });
+    setTimeout(() => {
+      const swiper = new Swiper('.swiper', {
+        slidesPerView: 4,
+        spaceBetween: 30,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        loop: true,
+      });
+    }, 100); // Espera a renderização
 
-    new Swiper('.destaque', {
-      slidesPerView: 1,
-      spaceBetween: 30,
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      loop: false,
-    });
+
+    setTimeout(() => {
+      const swiper = new Swiper('.destaque', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        loop: true,
+      });
+    }, 100); // Espera a renderização
 
     const canvas = document.getElementById('starCanvas');
     const ctx = canvas.getContext('2d');
