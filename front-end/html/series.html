@@ -438,15 +438,15 @@
         prevEl: '.swiper-button-prev',
       },
       on: {
-  slideChangeTransitionStart: function () {
-    this.slides.forEach(slide => {
-      const iframe = slide.querySelector('iframe');
-      if (iframe && iframe.src.includes('youtube.com')) {
-        iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+        slideChangeTransitionStart: function () {
+          this.slides.forEach(slide => {
+            const iframe = slide.querySelector('iframe');
+            if (iframe && iframe.src.includes('youtube.com')) {
+              iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+            }
+          });
+        }
       }
-    });
-  }
-}
 
     });
 

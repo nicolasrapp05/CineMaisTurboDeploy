@@ -13,6 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../styles/styles.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+  <script src="https://www.youtube.com/iframe_api"></script>
 
   <style>
    
@@ -114,6 +115,7 @@
 
 <body>
   <header>
+    
     <nav class="nav-menu color-black">
       <canvas id="starCanvas" style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:0;"></canvas>
 
@@ -132,6 +134,7 @@
   </header>
 
   <div class="col-md-12 mt-5 text-center mt-3">
+    
     <h2 class="fw-bold text-uppercase text-white border-bottom border-danger pb-2 px-3 d-inline-block"
       style="font-family: 'Inter', sans-serif; font-size: 2.5rem; letter-spacing: 2px;">
       <i class="fa-solid fa-fire"></i>&nbsp;Destaques 
@@ -145,7 +148,7 @@
         <div class="row align-items-center">
           <div style="display: flex;">
             <div class="col-md-6 text-center mt-5 me-1" style="margin-left:35px">
-            <iframe width="100%" height="345px" src="https://www.youtube.com/embed/MaLy0D2FTDc" frameborder="0"
+            <iframe width="100%" height="345px" src="https://www.youtube.com/embed/MaLy0D2FTDc?enablejsapi=1" frameborder="0"
               allowfullscreen></iframe>
           </div>
           <div class="col-md-5 text-white text-center ms-4 mt-5">
@@ -168,7 +171,7 @@
       <div class="swiper-slide destaque">
         <div class="row align-items-center">
           <div class="col-md-6 text-center mt-5 ms-5" style="margin-left: 40px !important">
-            <iframe width="100%" height="345px" src="https://www.youtube.com/embed/sac3HWs0BlI" frameborder="0"
+            <iframe width="100%" height="345px" src="https://www.youtube.com/embed/sac3HWs0BlI?enablejsapi=1" frameborder="0"
               allowfullscreen></iframe>
           </div>
           <div class="col-md-5 text-white text-center ms-4 mt-5">
@@ -182,7 +185,7 @@
       <div class="swiper-slide destaque">
         <div class="row align-items-center">
           <div class="col-md-6 text-center mt-5 ms-5" style="margin-left: 41px !important;">
-            <iframe width="100%" height="345px" src="https://www.youtube.com/embed/EVKYAAES6JQ" frameborder="0"
+            <iframe width="100%" height="345px" src="https://www.youtube.com/embed/EVKYAAES6JQ?enablejsapi=1" frameborder="0"
               allowfullscreen></iframe>
           </div>
           <div class="col-md-5 text-white text-center ms-4 mt-5">
@@ -408,15 +411,41 @@
 
 
     setTimeout(() => {
+    //   const swiper = new Swiper('.destaque', {
+    //     slidesPerView: 1,
+    //     spaceBetween: 30,
+    //     navigation: {
+    //       nextEl: '.swiper-button-next.destaque',
+    //       prevEl: '.swiper-button-prev.destaque',
+    //     },
+    //   });
+    // }, 100); // Espera a renderização
       const swiper = new Swiper('.destaque', {
         slidesPerView: 1,
         spaceBetween: 30,
+        loop: true,
+        speed: 1000,
+        effect: 'fade',
+        fadeEffect: {
+          crossFade: true
+        },
         navigation: {
           nextEl: '.swiper-button-next.destaque',
           prevEl: '.swiper-button-prev.destaque',
         },
+        on: {
+          slideChangeTransitionStart: function () {
+            this.slides.forEach(slide => {
+              const iframe = slide.querySelector('iframe');
+              if (iframe && iframe.src.includes('youtube.com')) {
+                iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+              }
+            });
+          }
+        }
+
       });
-    }, 100); // Espera a renderização
+      }, 100); // Espera a renderização
     });
 
     const canvas = document.getElementById('starCanvas');
