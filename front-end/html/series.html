@@ -70,8 +70,7 @@
 
     .swiper-slide {
       /* width: 300px !important; */
-      transition: opacity 1s ease-in-out;
-      height: 450px;
+      /* height: 450px; */
       background-color: #1f2a38;
       border-radius: 8px;
       overflow: hidden;
@@ -84,6 +83,15 @@
       height: 100%;
       object-fit: cover;
       display: block;
+    }
+
+    .swiper-slide.destaque{
+      height: 450px;
+       background-color: #1f2a38;
+      border-radius: 8px;
+      /* overflow: hidden; */
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
     }
 
     .swiper {
@@ -137,9 +145,9 @@
   </div>
 
   <div class="swiper destaque col-md-11 mt-5" style="width: 1381px;">
-    <div class="swiper-wrapper mb-5 col-md-6" id="carrossel-ficcaoCientifica">
+    <div class="swiper-wrapper mb-5 col-md-6">
 
-      <div class="swiper-slide">
+      <div class="swiper-slide destaque">
         <div class="row align-items-center">
           <div style="display: flex;">
             <div class="col-md-6 text-center mt-5 me-1" style="margin-left:35px">
@@ -158,7 +166,7 @@
           </div>
         </div>
       </div>
-      <div class="swiper-slide">
+      <div class="swiper-slide destaque">
         <div class="row align-items-center">
           <div class="col-md-6 text-center mt-5 ms-5" style="margin-left: 40px !important">
             <iframe width="100%" height="345px" src="https://www.youtube.com/embed/0vB2lHQim3Q?enablejsapi=1" frameborder="0"
@@ -175,7 +183,7 @@
           </div>
         </div>
       </div>
-      <div class="swiper-slide">
+      <div class="swiper-slide destaque">
         <div class="row align-items-center">
           <div class="col-md-6 text-center mt-5 ms-5" style="margin-left: 41px !important;">
             <iframe width="100%" height="345px" src="https://www.youtube.com/embed/chcPVeszoUo?enablejsapi=1" frameborder="0"
@@ -195,31 +203,9 @@
         </div>
       </div>
     </div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next destaque"></div>
+    <div class="swiper-button-prev destaque"></div>
   </div>
-
-  <!-- <div class="container my-5 p-5 " style="background-color: #2c2f38; border-radius: 5px;">
-
-    <div class="row align-items-center g-5">
-      <div class="col-md-6 text-center">
-        <iframe width="100%" height="345px" src="https://www.youtube.com/embed/_zHPsmXCjB0?autoplay=1" frameborder="0"
-          allowfullscreen></iframe>
-      </div>
-
-      <div class="col-md-6 text-white text-center">
-        <h1 class="fw-bold text-uppercase border-bottom border-danger pb-2 mb-3 d-inline-block">The Last Of Us</h1>
-        <p style="font-size: 1.05rem; line-height: 1.7;">
-          Situado duas décadas após a implosão de nossa sociedade, o drama seguirá Joel,
-          um sobrevivente difícil, que é contratado para contrabandear uma garota de 14 anos chamada Ellie para fora de
-          uma zona de quarentena opressiva. O que começa como um pequeno trabalho logo se torna uma jornada brutal e de
-          partir o coração, já que os dois precisam atravessar os Estados Unidos e dependem um do outro para sobreviver.
-
-
-        </p>
-      </div>
-    </div>
-  </div> -->
 
   <h1 class="text-center" style="background-color: white;
     color: black;
@@ -238,8 +224,8 @@
       <div class="swiper">
         <div class="swiper-wrapper" id="carrossel-ficcaoCientifica">
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next serie"></div>
+        <div class="swiper-button-prev serie"></div>
       </div>
     </div>
   </div>
@@ -254,8 +240,8 @@
       <div class="swiper">
         <div class="swiper-wrapper" id="carrossel-aventura">
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next serie"></div>
+        <div class="swiper-button-prev serie"></div>
       </div>
     </div>
   </div>
@@ -270,8 +256,8 @@
       <div class="swiper">
         <div class="swiper-wrapper" id="carrossel-animacao">
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next serie"></div>
+        <div class="swiper-button-prev serie"></div>
       </div>
     </div>
   </div>
@@ -286,8 +272,8 @@
       <div class="swiper">
         <div class="swiper-wrapper" id="carrossel-comedia">
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next serie"></div>
+        <div class="swiper-button-prev serie"></div>
       </div>
     </div>
   </div>
@@ -302,8 +288,8 @@
       <div class="swiper">
         <div class="swiper-wrapper" id="carrossel-documentario">
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next serie"></div>
+        <div class="swiper-button-prev serie"></div>
       </div>
     </div>
   </div>
@@ -318,8 +304,8 @@
       <div class="swiper">
         <div class="swiper-wrapper" id="carrossel-acao">
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next serie"></div>
+        <div class="swiper-button-prev serie"></div>
       </div>
     </div>
   </div>
@@ -334,8 +320,8 @@
       <div class="swiper">
         <div class="swiper-wrapper" id="carrossel-drama">
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next serie"></div>
+        <div class="swiper-button-prev serie"></div>
       </div>
     </div>
   </div>
@@ -350,8 +336,8 @@
       <div class="swiper">
         <div class="swiper-wrapper" id="carrossel-terror">
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next serie"></div>
+        <div class="swiper-button-prev serie"></div>
       </div>
     </div>
   </div>
@@ -366,8 +352,8 @@
       <div class="swiper">
         <div class="swiper-wrapper" id="carrossel-fantasia">
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next serie"></div>
+        <div class="swiper-button-prev serie"></div>
       </div>
     </div>
   </div>
@@ -382,8 +368,8 @@
       <div class="swiper">
         <div class="swiper-wrapper" id="carrossel-suspense">
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next serie"></div>
+        <div class="swiper-button-prev serie"></div>
       </div>
     </div>
   </div>
@@ -398,8 +384,8 @@
       <div class="swiper">
         <div class="swiper-wrapper" id="carrossel-faroeste">
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next serie"></div>
+        <div class="swiper-button-prev serie"></div>
       </div>
     </div>
   </div>
@@ -414,8 +400,8 @@
       <div class="swiper">
         <div class="swiper-wrapper" id="carrossel-romance">
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next serie"></div>
+        <div class="swiper-button-prev serie"></div>
       </div>
     </div>
   </div>
@@ -425,32 +411,49 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
   <script>
 
-    new Swiper('.destaque', {
-      slidesPerView: 1,
-      spaceBetween: 30,
-      loop: true,
-      speed: 1000,
-      effect: 'fade',
-      fadeEffect: {
-        crossFade: true
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      on: {
-        slideChangeTransitionStart: function () {
-          this.slides.forEach(slide => {
-            const iframe = slide.querySelector('iframe');
-            if (iframe && iframe.src.includes('youtube.com')) {
-              iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
-            }
-          });
-        }
-      }
+    $(document).ready(function () {
 
+      setTimeout(() => {
+        const swiper = new Swiper('.swiper', {
+          slidesPerView: 4,
+          spaceBetween: 30,
+          navigation: {
+            nextEl: '.swiper-button-next.serie',
+            prevEl: '.swiper-button-prev.serie',
+          },
+          loop: true,
+        });
+      }, 100);
+
+    setTimeout(() => {
+      const swiper = new Swiper('.destaque', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        speed: 1000,
+        effect: 'fade',
+        fadeEffect: {
+          crossFade: true
+        },
+        navigation: {
+          nextEl: '.swiper-button-next.destaque',
+          prevEl: '.swiper-button-prev.destaque',
+        },
+        on: {
+          slideChangeTransitionStart: function () {
+            this.slides.forEach(slide => {
+              const iframe = slide.querySelector('iframe');
+              if (iframe && iframe.src.includes('youtube.com')) {
+                iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+              }
+            });
+          }
+        }
+
+      });
+      }, 100); 
     });
-    
+
     const canvas = document.getElementById('starCanvas');
     const ctx = canvas.getContext('2d');
     let stars = [];
