@@ -17,6 +17,11 @@
 
 
   <style>
+
+    iframe{
+      border-radius: 10px;
+    }
+
     .fade-in {
       opacity: 0;
       transform: translateY(20px);
@@ -445,17 +450,7 @@
       }
 
     });
-
-
-    // new Swiper('.swiper', {
-    //   slidesPerView: 4,
-    //   spaceBetween: 30,
-    //   navigation: {
-    //     nextEl: '.swiper-button-next',
-    //     prevEl: '.swiper-button-prev',
-    //   },
-    // });
-
+    
     const canvas = document.getElementById('starCanvas');
     const ctx = canvas.getContext('2d');
     let stars = [];
