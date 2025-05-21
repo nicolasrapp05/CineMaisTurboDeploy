@@ -13,8 +13,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../styles/styles.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+  <script src="https://www.youtube.com/iframe_api"></script>
+
 
   <style>
+
+    iframe{
+      border-radius: 10px;
+    }
+
     .fade-in {
       opacity: 0;
       transform: translateY(20px);
@@ -62,8 +69,8 @@
     }
 
     .swiper-slide {
-      width: 300px !important;
-      height: 450px;
+      /* width: 300px !important; */
+      /* height: 450px; */
       background-color: #1f2a38;
       border-radius: 8px;
       overflow: hidden;
@@ -76,6 +83,15 @@
       height: 100%;
       object-fit: cover;
       display: block;
+    }
+
+    .swiper-slide.destaque{
+      height: 450px;
+       background-color: #1f2a38;
+      border-radius: 8px;
+      /* overflow: hidden; */
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
     }
 
     .swiper {
@@ -108,11 +124,7 @@
 
       <div class="logo"><a href="home.html"><img class="logo" width="120px" height="50px"
             src="../images/starwarspng.png" alt="" /></a>
-
-
-
       </div>
-
 
       <div class="menu-links">
         <a clas href="home.html"><i class="fa-solid fa-house"></i>&nbsp;&nbsp;Home</a>
@@ -128,30 +140,71 @@
   <div class="col-md-12 mt-5 text-center mt-3">
     <h2 class="fw-bold text-uppercase text-white border-bottom border-danger pb-2 px-3 d-inline-block"
       style="font-family: 'Inter', sans-serif; font-size: 2.5rem; letter-spacing: 2px;">
-      <i class="fa-solid fa-fire"></i>&nbsp;Destaque
+      <i class="fa-solid fa-fire"></i>&nbsp;Destaques
     </h2>
   </div>
 
-  <div class="container my-5 p-5 " style="background-color: #2c2f38; border-radius: 5px;">
+  <div class="swiper destaque col-md-11 mt-5" style="width: 1381px;">
+    <div class="swiper-wrapper mb-5 col-md-6">
 
-    <div class="row align-items-center g-5">
-      <div class="col-md-6 text-center">
-        <iframe width="100%" height="345px" src="https://www.youtube.com/embed/0vB2lHQim3Q?autoplay=1" frameborder="0"
-          allowfullscreen></iframe>
+      <div class="swiper-slide destaque">
+        <div class="row align-items-center">
+          <div style="display: flex;">
+            <div class="col-md-6 text-center mt-5 me-1" style="margin-left:35px">
+              <iframe width="100%" height="345px" src="https://www.youtube.com/embed/fOBIAa0n4mE?enablejsapi=1" frameborder="0"
+                allowfullscreen></iframe>
+            </div>
+            <div class="col-md-5 text-white text-center ms-4 mt-5">
+              <h1 class="fw-bold text-uppercase border-bottom border-warning pb-2 mt-5 d-inline-block">Andor</h1>
+              <p style="font-size: 1.05rem; line-height: 1.7;">
+                <strong>Andor</strong>, um thriller de espionagem de roer as unhas criado por Tony Gilroy, chega ao
+                Disney+ em agosto. Diego Luna, reprisando o papel do espião rebelde Cassian Andor de 'Rogue One: Uma
+                História Star Wars', será acompanhado por um novo elenco fantástico que inclui Stellan Skarsgård, Adria
+                Arjona, Fiona Shaw, Denise Gough, Kyle Soller e Genevieve O'Reilly como Mon Mothma.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <div class="col-md-6 text-white text-center">
-        <h1 class="fw-bold text-uppercase border-bottom border-danger pb-2 mb-3 d-inline-block">The Last Of Us</h1>
-        <p style="font-size: 1.05rem; line-height: 1.7;">
-          Situado duas décadas após a implosão de nossa sociedade, o drama seguirá Joel,
-          um sobrevivente difícil, que é contratado para contrabandear uma garota de 14 anos chamada Ellie para fora de
-          uma zona de quarentena opressiva. O que começa como um pequeno trabalho logo se torna uma jornada brutal e de
-          partir o coração, já que os dois precisam atravessar os Estados Unidos e dependem um do outro para sobreviver.
-
-
-        </p>
+      <div class="swiper-slide destaque">
+        <div class="row align-items-center">
+          <div class="col-md-6 text-center mt-5 ms-5" style="margin-left: 40px !important">
+            <iframe width="100%" height="345px" src="https://www.youtube.com/embed/0vB2lHQim3Q?enablejsapi=1" frameborder="0"
+              allowfullscreen></iframe>
+          </div>
+          <div class="col-md-5 text-white text-center ms-4 mt-5">
+            <h1 class="fw-bold text-uppercase border-bottom border-primary pb-2 mb-3 d-inline-block">The last of us</h1>
+            <p style="font-size: 1.05rem; line-height: 1.7;">
+              Situado duas décadas após a implosão de nossa sociedade, o drama seguirá Joel, um sobrevivente difícil,
+              que é contratado para contrabandear uma garota de 14 anos chamada Ellie para fora de uma zona de
+              quarentena opressiva. O que começa como um pequeno trabalho logo se torna uma jornada brutal e de partir o
+              coração, já que os dois precisam atravessar os Estados Unidos e dependem um do outro para sobreviver.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide destaque">
+        <div class="row align-items-center">
+          <div class="col-md-6 text-center mt-5 ms-5" style="margin-left: 41px !important;">
+            <iframe width="100%" height="345px" src="https://www.youtube.com/embed/chcPVeszoUo?enablejsapi=1" frameborder="0"
+              allowfullscreen></iframe>
+          </div>
+          <div class="col-md-5 text-white text-center ms-4 mt-5">
+            <h1 class="fw-bold text-uppercase border-bottom border-secondary pb-2 mb-3 d-inline-block">
+              Invencível
+            </h1>
+            <p style="font-size: 1.05rem; line-height: 1.7;">
+              Uma animação de super-heróis para adultos e conta a história de Mark Grayson, de 17 anos, um cara como
+              qualquer outro de sua idade, exceto que seu pai é o super-herói mais poderoso do planeta, Omni-Man. Porém,
+              à medida que Mark desenvolve seus próprios poderes, ele descobre que o legado de seu pai pode não ser tão
+              heroico quanto parece.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
+    <div class="swiper-button-next destaque"></div>
+    <div class="swiper-button-prev destaque"></div>
   </div>
 
   <h1 class="text-center" style="background-color: white;
@@ -171,14 +224,14 @@
       <div class="swiper">
         <div class="swiper-wrapper" id="carrossel-ficcaoCientifica">
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next serie"></div>
+        <div class="swiper-button-prev serie"></div>
       </div>
     </div>
   </div>
 
   <div class="text-center fade-in my-5">
-    <h2 class="fw-bold text-uppercase text-white border-bottom border-secondary pb-2 px-3 d-inline-block"
+    <h2 class="fw-bold text-uppercase text-white border-bottom border-info pb-2 px-3 d-inline-block"
       style="font-family: 'Inter', sans-serif; font-size: 2.5rem; letter-spacing: 2px;">
       <i class="fa-solid fa-compass"></i>&nbsp;Aventura
     </h2>
@@ -187,8 +240,8 @@
       <div class="swiper">
         <div class="swiper-wrapper" id="carrossel-aventura">
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next serie"></div>
+        <div class="swiper-button-prev serie"></div>
       </div>
     </div>
   </div>
@@ -203,8 +256,8 @@
       <div class="swiper">
         <div class="swiper-wrapper" id="carrossel-animacao">
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next serie"></div>
+        <div class="swiper-button-prev serie"></div>
       </div>
     </div>
   </div>
@@ -219,8 +272,8 @@
       <div class="swiper">
         <div class="swiper-wrapper" id="carrossel-comedia">
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next serie"></div>
+        <div class="swiper-button-prev serie"></div>
       </div>
     </div>
   </div>
@@ -235,14 +288,14 @@
       <div class="swiper">
         <div class="swiper-wrapper" id="carrossel-documentario">
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next serie"></div>
+        <div class="swiper-button-prev serie"></div>
       </div>
     </div>
   </div>
 
   <div class="text-center fade-in my-5">
-    <h2 class="fw-bold text-uppercase text-white border-bottom border-danger pb-2 px-3 d-inline-block"
+    <h2 class="fw-bold text-uppercase text-white border-bottom border-info pb-2 px-3 d-inline-block"
       style="font-family: 'Inter', sans-serif; font-size: 2.5rem; letter-spacing: 2px;">
       <i class="fas fa-gun"></i>&nbsp;Ação
     </h2>
@@ -251,14 +304,14 @@
       <div class="swiper">
         <div class="swiper-wrapper" id="carrossel-acao">
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next serie"></div>
+        <div class="swiper-button-prev serie"></div>
       </div>
     </div>
   </div>
 
   <div class="text-center fade-in my-5">
-    <h2 class="fw-bold text-uppercase text-white border-bottom border-danger pb-2 px-3 d-inline-block"
+    <h2 class="fw-bold text-uppercase text-white border-bottom border-warning pb-2 px-3 d-inline-block"
       style="font-family: 'Inter', sans-serif; font-size: 2.5rem; letter-spacing: 2px;">
       <i class="fas fa-masks-theater"></i>&nbsp;Drama
     </h2>
@@ -267,14 +320,14 @@
       <div class="swiper">
         <div class="swiper-wrapper" id="carrossel-drama">
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next serie"></div>
+        <div class="swiper-button-prev serie"></div>
       </div>
     </div>
   </div>
 
   <div class="text-center fade-in my-5">
-    <h2 class="fw-bold text-uppercase text-white border-bottom border-danger pb-2 px-3 d-inline-block"
+    <h2 class="fw-bold text-uppercase text-white border-bottom border-primary pb-2 px-3 d-inline-block"
       style="font-family: 'Inter', sans-serif; font-size: 2.5rem; letter-spacing: 2px;">
       <i class="fas fa-ghost"></i>&nbsp;Terror
     </h2>
@@ -283,8 +336,8 @@
       <div class="swiper">
         <div class="swiper-wrapper" id="carrossel-terror">
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next serie"></div>
+        <div class="swiper-button-prev serie"></div>
       </div>
     </div>
   </div>
@@ -299,14 +352,14 @@
       <div class="swiper">
         <div class="swiper-wrapper" id="carrossel-fantasia">
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next serie"></div>
+        <div class="swiper-button-prev serie"></div>
       </div>
     </div>
   </div>
 
   <div class="text-center fade-in my-5">
-    <h2 class="fw-bold text-uppercase text-white border-bottom border-danger pb-2 px-3 d-inline-block"
+    <h2 class="fw-bold text-uppercase text-white border-bottom border-info pb-2 px-3 d-inline-block"
       style="font-family: 'Inter', sans-serif; font-size: 2.5rem; letter-spacing: 2px;">
       <i class="fas fa-user-secret"></i> &nbsp;Suspense
     </h2>
@@ -315,14 +368,14 @@
       <div class="swiper">
         <div class="swiper-wrapper" id="carrossel-suspense">
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next serie"></div>
+        <div class="swiper-button-prev serie"></div>
       </div>
     </div>
   </div>
 
   <div class="text-center fade-in my-5">
-    <h2 class="fw-bold text-uppercase text-white border-bottom border-danger pb-2 px-3 d-inline-block"
+    <h2 class="fw-bold text-uppercase text-white border-bottom border-warning pb-2 px-3 d-inline-block"
       style="font-family: 'Inter', sans-serif; font-size: 2.5rem; letter-spacing: 2px;">
       <i class="fas fa-hat-cowboy"></i>&nbsp;Foroeste
     </h2>
@@ -331,14 +384,14 @@
       <div class="swiper">
         <div class="swiper-wrapper" id="carrossel-faroeste">
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next serie"></div>
+        <div class="swiper-button-prev serie"></div>
       </div>
     </div>
   </div>
 
   <div class="text-center fade-in my-5">
-    <h2 class="fw-bold text-uppercase text-white border-bottom border-danger pb-2 px-3 d-inline-block"
+    <h2 class="fw-bold text-uppercase text-white border-bottom border-primary pb-2 px-3 d-inline-block"
       style="font-family: 'Inter', sans-serif; font-size: 2.5rem; letter-spacing: 2px;">
       <i class="fas fa-heart"></i>&nbsp;Romance
     </h2>
@@ -347,8 +400,8 @@
       <div class="swiper">
         <div class="swiper-wrapper" id="carrossel-romance">
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next serie"></div>
+        <div class="swiper-button-prev serie"></div>
       </div>
     </div>
   </div>
@@ -357,13 +410,48 @@
 
   <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
   <script>
-    new Swiper('.swiper', {
-      slidesPerView: 4,
-      spaceBetween: 30,
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
+
+    $(document).ready(function () {
+
+      setTimeout(() => {
+        const swiper = new Swiper('.swiper', {
+          slidesPerView: 4,
+          spaceBetween: 30,
+          navigation: {
+            nextEl: '.swiper-button-next.serie',
+            prevEl: '.swiper-button-prev.serie',
+          },
+          loop: true,
+        });
+      }, 100);
+
+    setTimeout(() => {
+      const swiper = new Swiper('.destaque', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        speed: 1000,
+        effect: 'fade',
+        fadeEffect: {
+          crossFade: true
+        },
+        navigation: {
+          nextEl: '.swiper-button-next.destaque',
+          prevEl: '.swiper-button-prev.destaque',
+        },
+        on: {
+          slideChangeTransitionStart: function () {
+            this.slides.forEach(slide => {
+              const iframe = slide.querySelector('iframe');
+              if (iframe && iframe.src.includes('youtube.com')) {
+                iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+              }
+            });
+          }
+        }
+
+      });
+      }, 100); 
     });
 
     const canvas = document.getElementById('starCanvas');

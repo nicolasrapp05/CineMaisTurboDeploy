@@ -13,8 +13,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../styles/styles.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+  <script src="https://www.youtube.com/iframe_api"></script>
 
   <style>
+   
+    iframe{
+      border-radius: 10px;
+    }
 
     .fade-in {
       opacity: 0;
@@ -63,11 +68,20 @@
     }
 
     .swiper-slide {
-      width: 300px !important;
-      height: 450px;
+      /* width: 300px !important; */
+      /* height: 450px; */
       background-color: #1f2a38;
       border-radius: 8px;
       overflow: hidden;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    }
+    
+    .swiper-slide.destaque{
+      height: 450px;
+       background-color: #1f2a38;
+      border-radius: 8px;
+      /* overflow: hidden; */
       text-align: center;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
     }
@@ -104,63 +118,99 @@
 
 <body>
   <header>
+    
     <nav class="nav-menu color-black">
       <canvas id="starCanvas" style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:0;"></canvas>
 
       <div class="logo"><a href="home.html"><img class="logo" width="120px" height="50px"
             src="../images/starwarspng.png" alt="" /></a>
-
-
-
       </div>
-
 
       <div class="menu-links">
         <a clas href="home.html"><i class="fa-solid fa-house"></i>&nbsp;&nbsp;Home</a>
         <a href="filmes.html"><i class="fa-solid fa-clapperboard"></i>&nbsp;&nbsp;Filmes</a>
         <a href="series.html"><i class="fa-solid fa-film"></i>&nbsp;&nbsp;Séries</a>
         <a href="ranking.html"><i class="fa-solid fa-ranking-star"></i>&nbsp;&nbsp;Ranking</a>
-        <a href="cadastro.html"><i class="fa-solid fa-circle-plus"></i>&nbsp;&nbsp;Cadastro</a>
-      </div>
+        <a href="cadastro.html"><i class="fa-solid fas fa-pen"></i>&nbsp;Cadastro</a>
+      </div>  
+      
     </nav>
   </header>
 
-
   <div class="col-md-12 mt-5 text-center mt-3">
+    
     <h2 class="fw-bold text-uppercase text-white border-bottom border-danger pb-2 px-3 d-inline-block"
       style="font-family: 'Inter', sans-serif; font-size: 2.5rem; letter-spacing: 2px;">
-      <i class="fa-solid fa-fire"></i>&nbsp;Destaque
+      <i class="fa-solid fa-fire"></i>&nbsp;Destaques 
     </h2>
   </div>
 
-  <div class="container my-5 p-5 " style="background-color: #2c2f38; border-radius: 5px;">
+  <div class="swiper destaque col-md-11 mt-5" style="width: 1381px;"> 
+    <div class="swiper-wrapper mb-5 col-md-6">
 
-    <div class="row align-items-center g-5">
-      <div class="col-md-6 text-center">
-        <iframe width="100%" height="345px" src="https://www.youtube.com/embed/MaLy0D2FTDc?autoplay=1" frameborder="0"
-          allowfullscreen></iframe>
+      <div class="swiper-slide destaque">
+        <div class="row align-items-center">
+          <div style="display: flex;">
+            <div class="col-md-6 text-center mt-5 me-1" style="margin-left:35px">
+            <iframe width="100%" height="345px" src="https://www.youtube.com/embed/MaLy0D2FTDc?enablejsapi=1" frameborder="0"
+              allowfullscreen></iframe>
+          </div>
+          <div class="col-md-5 text-white text-center ms-4 mt-5">
+            <h1 class="fw-bold text-uppercase border-bottom border-warning pb-2 mb-3 d-inline-block">Thunderbolts*</h1>
+            <p style="font-size: 1.05rem; line-height: 1.7;">
+              <strong>Thunderbolts*</strong> é um filme estadunidense de super-herói de 2025 baseado na equipe ficcional
+              de
+              mesmo nome, da Marvel Comics. Produzido pela Marvel Studios e distribuído pela Walt Disney Studios Motion
+              Pictures, é o trigésimo sexto filme do Universo Cinematográfico Marvel. O filme é dirigido por Jake
+              Schreier,
+              com roteiro de Eric Pearson e Joanna Calo, e estrelado por um elenco que inclui Florence Pugh, Sebastian
+              Stan,
+              David Harbour e Julia Louis-Dreyfus. Um grupo de anti-heróis é pego em uma armadilha mortal e forçado a
+              trabalhar juntos em uma missão perigosa.
+            </p>
+          </div>
+          </div>
+        </div>
       </div>
-
-      <div class="col-md-6 text-white text-center">
-        <h1 class="fw-bold text-uppercase border-bottom border-danger pb-2 mb-3 d-inline-block">Thunderbolts*</h1>
-        <p style="font-size: 1.05rem; line-height: 1.7;">
-          <strong>Thunderbolts*</strong> é um filme estadunidense de super-herói de 2025 baseado na equipe ficcional de
-          mesmo nome, da Marvel Comics. Produzido pela Marvel Studios e distribuído pela Walt Disney Studios Motion
-          Pictures, é o trigésimo sexto filme do Universo Cinematográfico Marvel. O filme é dirigido por Jake Schreier,
-          com roteiro de Eric Pearson e Joanna Calo, e estrelado por um elenco que inclui Florence Pugh, Sebastian Stan,
-          David Harbour e Julia Louis-Dreyfus. Um grupo de anti-heróis é pego em uma armadilha mortal e forçado a
-          trabalhar juntos em uma missão perigosa.
-        </p>
+      <div class="swiper-slide destaque">
+        <div class="row align-items-center">
+          <div class="col-md-6 text-center mt-5 ms-5" style="margin-left: 40px !important">
+            <iframe width="100%" height="345px" src="https://www.youtube.com/embed/sac3HWs0BlI?enablejsapi=1" frameborder="0"
+              allowfullscreen></iframe>
+          </div>
+          <div class="col-md-5 text-white text-center ms-4 mt-5">
+            <h1 class="fw-bold text-uppercase border-bottom border-primary pb-2 mb-3 d-inline-block">Missão: Impossível - O Acerto Final</h1>
+            <p style="font-size: 1.05rem; line-height: 1.7;">
+              Depois de escapar de um acidente de trem calamitoso, Ethan percebe que a Entidade está escondida a bordo de um antigo submarino russo, mas um inimigo do seu passado chamado Gabriel também está no encalço.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide destaque">
+        <div class="row align-items-center">
+          <div class="col-md-6 text-center mt-5 ms-5" style="margin-left: 41px !important;">
+            <iframe width="100%" height="345px" src="https://www.youtube.com/embed/EVKYAAES6JQ?enablejsapi=1" frameborder="0"
+              allowfullscreen></iframe>
+          </div>
+          <div class="col-md-5 text-white text-center ms-4 mt-5">
+            <h1 class="fw-bold text-uppercase border-bottom border-secondary pb-2 mb-3 d-inline-block">Um Filme Minecraft</h1>
+            <p style="font-size: 1.05rem; line-height: 1.7;">
+              Quatro desajustados enfrentam problemas comuns do dia a dia quando, de repente, são sugados por um portal misterioso para o Overworld: uma terra fascinante e cúbica, movida pela imaginação. Para voltarem para casa, eles precisarão dominar esse novo mundo enquanto embarcam em uma jornada mágica ao lado de um crafter experiente e inesperado: Steve.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
+    <div class="swiper-button-next destaque"></div>
+    <div class="swiper-button-prev destaque"></div>
   </div>
+
 
   <h1 class="text-center" style="background-color: white;
     color: black;
     align-items: end;
     padding: 20px;
     text-align: start;"><i class="fa-solid fa-clapperboard"></i>&nbsp;GÊNEROS</h1>
-
   <div class="text-center fade-in my-5">
 
     <h2 class="fw-bold text-uppercase text-white border-bottom border-danger pb-2 px-3 d-inline-block"
@@ -172,14 +222,14 @@
       <div class="swiper">
         <div class="swiper-wrapper" id="carrossel-ficcaoCientifica">
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next filme"></div>
+        <div class="swiper-button-prev filme"></div>
       </div>
     </div>
   </div>
 
   <div class="text-center fade-in my-5">
-    <h2 class="fw-bold text-uppercase text-white border-bottom border-secondary pb-2 px-3 d-inline-block"
+    <h2 class="fw-bold text-uppercase text-white border-bottom border-info pb-2 px-3 d-inline-block"
       style="font-family: 'Inter', sans-serif; font-size: 2.5rem; letter-spacing: 2px;">
       <i class="fa-solid fa-compass"></i>&nbsp;Aventura
     </h2>
@@ -188,8 +238,8 @@
       <div class="swiper">
         <div class="swiper-wrapper" id="carrossel-aventura">
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next filme"></div>
+        <div class="swiper-button-prev filme"></div>
       </div>
     </div>
   </div>
@@ -204,7 +254,7 @@
       <div class="swiper">
         <div class="swiper-wrapper" id="carrossel-animacao">
         </div>
-        <div class="swiper-button-next"></div>
+        <div class="swiper-button-next filme"></div>
         <div class="swiper-button-prev"></div>
       </div>
     </div>
@@ -220,8 +270,8 @@
       <div class="swiper">
         <div class="swiper-wrapper" id="carrossel-comedia">
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next filme"></div>
+        <div class="swiper-button-prev filme"></div>
       </div>
     </div>
   </div>
@@ -236,14 +286,13 @@
       <div class="swiper">
         <div class="swiper-wrapper" id="carrossel-documentario">
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next filme"></div>
+        <div class="swiper-button-prev filme"></div>
       </div>
     </div>
   </div>
-  
   <div class="text-center fade-in my-5">
-    <h2 class="fw-bold text-uppercase text-white border-bottom border-danger pb-2 px-3 d-inline-block"
+    <h2 class="fw-bold text-uppercase text-white border-bottom border-info pb-2 px-3 d-inline-block"
       style="font-family: 'Inter', sans-serif; font-size: 2.5rem; letter-spacing: 2px;">
       <i class="fas fa-gun"></i>&nbsp;Ação
     </h2>
@@ -252,14 +301,13 @@
       <div class="swiper">
         <div class="swiper-wrapper" id="carrossel-acao">
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next filme"></div>
+        <div class="swiper-button-prev filme"></div>
       </div>
     </div>
   </div>
-  
   <div class="text-center fade-in my-5">
-    <h2 class="fw-bold text-uppercase text-white border-bottom border-danger pb-2 px-3 d-inline-block"
+    <h2 class="fw-bold text-uppercase text-white border-bottom border-warning pb-2 px-3 d-inline-block"
       style="font-family: 'Inter', sans-serif; font-size: 2.5rem; letter-spacing: 2px;">
       <i class="fas fa-masks-theater"></i>&nbsp;Drama
     </h2>
@@ -268,14 +316,13 @@
       <div class="swiper">
         <div class="swiper-wrapper" id="carrossel-drama">
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next filme"></div>
+        <div class="swiper-button-prev filme"></div>
       </div>
     </div>
   </div>
-  
   <div class="text-center fade-in my-5">
-    <h2 class="fw-bold text-uppercase text-white border-bottom border-danger pb-2 px-3 d-inline-block"
+    <h2 class="fw-bold text-uppercase text-white border-bottom border-primary pb-2 px-3 d-inline-block"
       style="font-family: 'Inter', sans-serif; font-size: 2.5rem; letter-spacing: 2px;">
       <i class="fas fa-ghost"></i>&nbsp;Terror
     </h2>
@@ -284,12 +331,11 @@
       <div class="swiper">
         <div class="swiper-wrapper" id="carrossel-terror">
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next filme"></div>
+        <div class="swiper-button-prev filme"></div>
       </div>
     </div>
   </div>
-  
   <div class="text-center fade-in my-5">
     <h2 class="fw-bold text-uppercase text-white border-bottom border-danger pb-2 px-3 d-inline-block"
       style="font-family: 'Inter', sans-serif; font-size: 2.5rem; letter-spacing: 2px;">
@@ -300,30 +346,28 @@
       <div class="swiper">
         <div class="swiper-wrapper" id="carrossel-fantasia">
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next filme"></div>
+        <div class="swiper-button-prev filme"></div>
       </div>
     </div>
   </div>
-  
   <div class="text-center fade-in my-5">
-    <h2 class="fw-bold text-uppercase text-white border-bottom border-danger pb-2 px-3 d-inline-block"
+    <h2 class="fw-bold text-uppercase text-white border-bottom border-info pb-2 px-3 d-inline-block"
       style="font-family: 'Inter', sans-serif; font-size: 2.5rem; letter-spacing: 2px;">
-      <i class="fas fa-user-secret"></i>  &nbsp;Suspense
+      <i class="fas fa-user-secret"></i> &nbsp;Suspense
     </h2>
 
     <div id="filmes-drama" class="mt-4">
       <div class="swiper">
         <div class="swiper-wrapper" id="carrossel-suspense">
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next filme"></div>
+        <div class="swiper-button-prev filme"></div>
       </div>
     </div>
   </div>
-  
   <div class="text-center fade-in my-5">
-    <h2 class="fw-bold text-uppercase text-white border-bottom border-danger pb-2 px-3 d-inline-block"
+    <h2 class="fw-bold text-uppercase text-white border-bottom border-warning pb-2 px-3 d-inline-block"
       style="font-family: 'Inter', sans-serif; font-size: 2.5rem; letter-spacing: 2px;">
       <i class="fas fa-hat-cowboy"></i>&nbsp;Foroeste
     </h2>
@@ -332,14 +376,13 @@
       <div class="swiper">
         <div class="swiper-wrapper" id="carrossel-faroeste">
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next filme"></div>
+        <div class="swiper-button-prev filme"></div>
       </div>
     </div>
   </div>
-  
   <div class="text-center fade-in my-5">
-    <h2 class="fw-bold text-uppercase text-white border-bottom border-danger pb-2 px-3 d-inline-block"
+    <h2 class="fw-bold text-uppercase text-white border-bottom border-primary pb-2 px-3 d-inline-block"
       style="font-family: 'Inter', sans-serif; font-size: 2.5rem; letter-spacing: 2px;">
       <i class="fas fa-heart"></i>&nbsp;Romance
     </h2>
@@ -348,23 +391,65 @@
       <div class="swiper">
         <div class="swiper-wrapper" id="carrossel-romance">
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next filme"></div>
+        <div class="swiper-button-prev filme"></div>
       </div>
     </div>
   </div>
-  
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
   <script>
-    new Swiper('.swiper', {
-      slidesPerView: 4,
-      spaceBetween: 30,
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
+    $(document).ready(function () {
+      setTimeout(() => {
+      const swiper = new Swiper('.swiper', {
+        slidesPerView: 4,
+        spaceBetween: 30,
+        navigation: {
+          nextEl: '.swiper-button-next.filme',
+          prevEl: '.swiper-button-prev.filme',
+        },
+        loop: true,
+      });
+    }, 100); // Espera a renderização
+
+
+    setTimeout(() => {
+    //   const swiper = new Swiper('.destaque', {
+    //     slidesPerView: 1,
+    //     spaceBetween: 30,
+    //     navigation: {
+    //       nextEl: '.swiper-button-next.destaque',
+    //       prevEl: '.swiper-button-prev.destaque',
+    //     },
+    //   });
+    // }, 100); // Espera a renderização
+      const swiper = new Swiper('.destaque', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        speed: 1000,
+        effect: 'fade',
+        fadeEffect: {
+          crossFade: true
+        },
+        navigation: {
+          nextEl: '.swiper-button-next.destaque',
+          prevEl: '.swiper-button-prev.destaque',
+        },
+        on: {
+          slideChangeTransitionStart: function () {
+            this.slides.forEach(slide => {
+              const iframe = slide.querySelector('iframe');
+              if (iframe && iframe.src.includes('youtube.com')) {
+                iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+              }
+            });
+          }
+        }
+
+      });
+      }, 100); // Espera a renderização
     });
 
     const canvas = document.getElementById('starCanvas');
