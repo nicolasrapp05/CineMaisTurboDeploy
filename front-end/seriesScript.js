@@ -301,9 +301,7 @@ $(document).ready(function () {
                         <div class="text-white p-4" style="
                             background: linear-gradient(rgba(0,0,0,0.92), rgba(0,0,0,0.92)), url('${serie.foto}') no-repeat center center;
                             background-size: cover;
-                            border-radius: 10px;
-                            
-                            ">
+                            border-radius: 10px;">
                             <div class="row">
                                 <div class="col-md-4 text-center mb-3">
                                     <img class="img-fluid rounded shadow" src="${serie.foto}" alt="${serie.nome}">
@@ -326,7 +324,7 @@ $(document).ready(function () {
                                             <option value="" disabled >Selecione uma opção</option>
                                             <option value="Acao">Ação</option>
                                             <option value="Aventura">Aventura</option>
-                                            <option value="Animação">Animação</option>
+                                            <option value="Animacao">Animação</option>
                                             <option value="Comedia">Comédia</option>
                                             <option value="Documentario">Documentário</option>
                                             <option value="Drama">Drama</option>
@@ -338,11 +336,6 @@ $(document).ready(function () {
                                             <option value="Terror">Terror</option>
                                         </select>
                                     </div>
-                                </div>
-
-                                <div class="mb-2">
-                                    <label><strong>Duração:</strong></label>
-                                    <input type="text" class="form-control" id="input-duracao" value="${serie.duracao}">
                                 </div>
 
                                 <div class="mb-2">

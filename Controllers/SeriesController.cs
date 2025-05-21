@@ -69,7 +69,7 @@ namespace CineTurbo.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateSerie(int id, [FromBody] Serie serieAtualizado)
+        public async Task<IActionResult> UpdateSerie(int id, [FromBody] Serie serieAtualizada)
         {
             var serieExistente = await _appDbContext.SeriesDB.FindAsync(id);
 
@@ -77,11 +77,20 @@ namespace CineTurbo.Controllers
                 return NotFound("Serie não encontrado!");
             }
 
-            _appDbContext.Entry(serieExistente).CurrentValues.SetValues(serieAtualizado);
+            serieExistente.Nome = serieAtualizada.Nome;
+            serieExistente.Sinopse = serieAtualizada.Sinopse;
+            serieExistente.Foto = serieAtualizada.Foto;
+            serieExistente.Genero = serieAtualizada.Genero;
+            serieExistente.Avaliacao = serieAtualizada.Avaliacao;
+            serieExistente.AvaliacaoImdb = serieAtualizada.AvaliacaoImdb;
+            serieExistente.AvaliacaoTomates = serieAtualizada.AvaliacaoTomates;
+            serieExistente.Episodios = serieAtualizada.Episodios;
+            serieExistente.Temporadas = serieAtualizada.Temporadas;
+            serieExistente.Lancamento = serieAtualizada.Lancamento;
 
             await _appDbContext.SaveChangesAsync();
 
-            return StatusCode(201, serieAtualizado);
+            return StatusCode(201, serieAtualizada);
         }
 
         [HttpDelete("{id}")]

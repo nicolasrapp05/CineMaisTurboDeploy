@@ -326,7 +326,7 @@ $(document).ready(function () {
                                             <option value="" disabled >Selecione uma opção</option>
                                             <option value="Acao">Ação</option>
                                             <option value="Aventura">Aventura</option>
-                                            <option value="Animação">Animação</option>
+                                            <option value="Animacao">Animação</option>
                                             <option value="Comedia">Comédia</option>
                                             <option value="Documentario">Documentário</option>
                                             <option value="Drama">Drama</option>
