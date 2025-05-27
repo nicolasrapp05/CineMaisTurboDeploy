@@ -197,3 +197,11 @@ select {
 #duracao{
   background-color: darkgray;
 }
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #1a1b20;
+  font-size: 0.9rem;
+  color: #94a3b8;
+}

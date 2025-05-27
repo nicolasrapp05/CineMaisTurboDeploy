@@ -15,7 +15,6 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
 
   <style>
-
     .fade-in {
       opacity: 0;
       transform: translateY(20px);
@@ -62,25 +61,52 @@
       z-index: 1;
     }
 
-    .swiper-slide {
-      width: 300px !important;
-      height: 450px;
-      background-color: #1f2a38;
-      border-radius: 8px;
-      overflow: hidden;
-      text-align: center;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
-    }
-
-    .swiper-slide img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
+    body {
+      overflow-x: hidden;
     }
 
     .swiper {
-      padding: 0 40px;
+      width: 100vw;
+      height: 70vh;
+      /* padding: 20px 40px; */
+    }
+
+    @keyframes movingBackground {
+      from {
+        background-position: 0 0;
+      }
+
+      to {
+        background-position: 1000px 0;
+      }
+    }
+
+    body {
+      background-image: url('../images/fundo-espacial.jpg');
+      background-repeat: repeat-x;
+      animation: movingBackground 100s linear infinite;
+    }
+
+
+    .swiper-slide {
+      background-color: #1f2a38;
+      border-radius: 10px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5rem;
+      color: white;
+      height: 100%;
+    }
+
+    .swiper-pagination-bullet {
+      background: #999;
+      opacity: 1;
+    }
+
+    .swiper-pagination-bullet-active {
+      background: #007bff;
     }
 
     body {
@@ -99,6 +125,60 @@
       border-radius: 10px;
       padding: 0;
     }
+
+    .top10Swiper {
+      height: 120%;
+      position: relative;
+    }
+
+    .top10Swiper .swiper-slide {
+      width: 250px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      background: transparent;
+    }
+
+    .ranking-number {
+      font-size: 120px;
+      font-weight: bold;
+      color: rgba(255, 255, 255, 0.08);
+      margin-right: -10px;
+      z-index: 1;
+    }
+
+    .poster {
+      width: 180px;
+      border-radius: 10px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+      color: white;
+      background-color: rgba(0, 0, 0, 0.4);
+      padding: 10px;
+      border-radius: 50%;
+      top: 40%;
+    }
+
+    .top10Swiper .swiper-wrapper {
+      padding-right: 40px;
+      box-sizing: border-box;
+    }
+
+    .swiper.top10Swiper {
+      padding-right: 80px;
+      padding-left: 30px;
+    }
+
+    /* .img-slide {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 10px;
+    } */
   </style>
 </head>
 
@@ -121,42 +201,298 @@
     </nav>
   </header>
 
+  <div class="swiper mySwiper" style="margin-top: 9px;">
+    <canvas id="starCanvas" style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:0;"></canvas>
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" style="background-color: black;">
+        <img src="../images/brmvindo.jpg" alt="" class="img-slide pinto" style="width: 50%; background-color: black;">
+      </div>
+      <!-- <div class="swiper-slide">
+        <img src="../images/miranha.jpg" alt="" class="img-slide">
+      </div>
+      <div class="swiper-slide">
+        <img src="../images/carrofera.jpg" alt="" class="img-slide">
+      </div> -->
+    </div>
+    <div class="swiper-pagination mb-3"></div>
+  </div>
+
+  <div class="container">
+
+  </div>
+
+  <div class="col-md-12 mt-5 text-center mt-3 mb-3">
+
+    <h2 class="fw-bold text-uppercase text-white border-bottom border-warning pb-2 px-3 d-inline-block mb-5"
+      style="font-family: 'Inter', sans-serif; font-size: 2.5rem; letter-spacing: 2px;">
+      <i class="fa-solid fa-clapperboard"></i>&nbsp;TOP 10 FILMES
+    </h2>
+  </div>
+  <div class="swiper top10Swiper mb-4">
+
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="ranking-number">1</div>
+        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
+      </div>
+      <div class="swiper-slide">
+        <div class="ranking-number">2</div>
+        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
+      </div>
+      <div class="swiper-slide">
+        <div class="ranking-number">3</div>
+        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
+      </div>
+      <div class="swiper-slide">
+        <div class="ranking-number">4</div>
+        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
+      </div>
+      <div class="swiper-slide">
+        <div class="ranking-number">5</div>
+        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
+      </div>
+      <div class="swiper-slide">
+        <div class="ranking-number">6</div>
+        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
+      </div>
+      <div class="swiper-slide">
+        <div class="ranking-number">7</div>
+        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
+      </div>
+      <div class="swiper-slide">
+        <div class="ranking-number">8</div>
+        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
+      </div>
+      <div class="swiper-slide">
+        <div class="ranking-number">9</div>
+        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 2">
+      </div>
+      <div class="swiper-slide">
+        <div class="ranking-number">10</div>
+        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 3">
+      </div>
+    </div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+
+  <div class="col-md-12 mt-5 text-center mt-3 mb-3">
+
+    <h2 class="fw-bold text-uppercase text-white border-bottom border-primary pb-2 px-3 d-inline-block mb-5"
+      style="font-family: 'Inter', sans-serif; font-size: 2.5rem; letter-spacing: 2px;">
+      <i class="fa-solid fa-film"></i>&nbsp;TOP 10 SÉRIES
+    </h2>
+  </div>
+  <div class="swiper top10Swiper mb-4">
+
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="ranking-number">1</div>
+        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
+      </div>
+      <div class="swiper-slide">
+        <div class="ranking-number">2</div>
+        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
+      </div>
+      <div class="swiper-slide">
+        <div class="ranking-number">3</div>
+        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
+      </div>
+      <div class="swiper-slide">
+        <div class="ranking-number">4</div>
+        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
+      </div>
+      <div class="swiper-slide">
+        <div class="ranking-number">5</div>
+        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
+      </div>
+      <div class="swiper-slide">
+        <div class="ranking-number">6</div>
+        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
+      </div>
+      <div class="swiper-slide">
+        <div class="ranking-number">7</div>
+        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
+      </div>
+      <div class="swiper-slide">
+        <div class="ranking-number">8</div>
+        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
+      </div>
+      <div class="swiper-slide">
+        <div class="ranking-number">9</div>
+        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 2">
+      </div>
+      <div class="swiper-slide">
+        <div class="ranking-number">10</div>
+        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 3">
+      </div>
+    </div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+
 
   <div class="col-md-12 mt-5 text-center mt-3">
-    <h2 class="fw-bold text-uppercase text-white border-bottom border-danger pb-2 px-3 d-inline-block"
+    <h2 class="fw-bold text-uppercase text-white border-bottom border-danger pb-2 px-3 d-inline-block mb-5"
       style="font-family: 'Inter', sans-serif; font-size: 2.5rem; letter-spacing: 2px;">
-      <i class="fa-solid fa-fire"></i>&nbsp;Destaque
+      <i class="fa-solid fa-rocket"></i>&nbsp;LANÇAMENTOS FILMES
     </h2>
   </div>
 
-  <iframe src="../images/doom.pdf" width="100%" height="600px"></iframe>
+  <div class="swiper top10Swiper mb-4">
 
+    <div class="swiper-wrapper top10">
+      <div class="swiper-slide">
+        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
+      </div>
+      <div class="swiper-slide">
+        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
+      </div>
+      <div class="swiper-slide">
+        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
+      </div>
+      <div class="swiper-slide">
+        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
+      </div>
+      <div class="swiper-slide">
+        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
+      </div>
+      <div class="swiper-slide">
+        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
+      </div>
+      <div class="swiper-slide">
+        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
+      </div>
+      <div class="swiper-slide">
+        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
+      </div>
+      <div class="swiper-slide">
+        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 2">
+      </div>
+      <div class="swiper-slide">
+        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 3">
+      </div>
+    </div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
 
-  
-      <div  
-      id="filmes-container"
-      style="
-        padding: 40px;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 40px;
-        justify-content: space-evenly;
-      "
-    ></div>
   </div>
-  
+  <div class="col-md-12 mt-5 text-center mt-3">
+    <h2 class="fw-bold text-uppercase text-white border-bottom border-danger pb-2 px-3 d-inline-block mb-5"
+      style="font-family: 'Inter', sans-serif; font-size: 2.5rem; letter-spacing: 2px;">
+      <i class="fa-solid fa-rocket"></i>&nbsp;LANÇAMENTOS SÉRIES
+    </h2>
   </div>
 
+  <div class="swiper top10Swiper mb-4">
+
+    <div class="swiper-wrapper top10">
+      <div class="swiper-slide">
+        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
+      </div>
+      <div class="swiper-slide">
+        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
+      </div>
+      <div class="swiper-slide">
+        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
+      </div>
+      <div class="swiper-slide">
+        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
+      </div>
+      <div class="swiper-slide">
+        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
+      </div>
+      <div class="swiper-slide">
+        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
+      </div>
+      <div class="swiper-slide">
+        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
+      </div>
+      <div class="swiper-slide">
+        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
+      </div>
+      <div class="swiper-slide">
+        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 2">
+      </div>
+      <div class="swiper-slide">
+        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 3">
+      </div>
+    </div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+  </div>
+  <div class="col-md-12 mt-5 text-center mt-3">
+    <h2 class="fw-bold text-uppercase text-white border-bottom border-info pb-2 px-3 d-inline-block mb-5"
+      style="font-family: 'Inter', sans-serif; font-size: 2.5rem; letter-spacing: 2px;">
+      <i class="fa-solid fa-star"></i>&nbsp;RECOMENDAÇÕES DA CASA
+    </h2>
+  </div>
+
+  <div class="swiper top10Swiper mb-4">
+
+    <div class="swiper-wrapper top10">
+      <div class="swiper-slide">
+        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
+      </div>
+      <div class="swiper-slide">
+        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
+      </div>
+      <div class="swiper-slide">
+        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
+      </div>
+      <div class="swiper-slide">
+        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
+      </div>
+      <div class="swiper-slide">
+        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
+      </div>
+      <div class="swiper-slide">
+        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
+      </div>
+      <div class="swiper-slide">
+        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
+      </div>
+      <div class="swiper-slide">
+        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
+      </div>
+      <div class="swiper-slide">
+        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 2">
+      </div>
+      <div class="swiper-slide">
+        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 3">
+      </div>
+    </div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+  </div>
+
+
+
+  <footer>&copy; 2025 Cine + Turbo. Todos os direitos reservados.</footer>
   <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
   <script>
-    new Swiper('.swiper', {
-      slidesPerView: 4,
+
+    const swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1,
       spaceBetween: 30,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      loop: true,
+    });
+
+    const top10Swiper = new Swiper(".top10Swiper", {
+      slidesPerView: "auto",
+      spaceBetween: 20,
       navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
       },
     });
+
 
     const canvas = document.getElementById('starCanvas');
     const ctx = canvas.getContext('2d');
@@ -206,7 +542,7 @@
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
-          observer.unobserve(entry.target); // remove observador após animar
+          observer.unobserve(entry.target);
         }
       });
     }, {
@@ -217,7 +553,7 @@
       observer.observe(element);
     });
 
-    
+
 
 
   </script>
