@@ -4,17 +4,20 @@
 <head>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <link rel="stylesheet" href="/path/to/lightsabers.css">
-  <link rel="icon" type="image/png" href="../images/starwarspng.png" />
+  <link rel="icon" type="image/png" href="../images/logoVermelha.png" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FILMES</title>
+  <title>DOOM</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../styles/styles.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+  <script src="https://www.youtube.com/iframe_api"></script>
 
   <style>
+    iframe {
+      border-radius: 10px;
+    }
 
     .fade-in {
       opacity: 0;
@@ -63,11 +66,20 @@
     }
 
     .swiper-slide {
-      width: 300px !important;
-      height: 450px;
+      /* width: 300px !important; */
+      /* height: 450px; */
       background-color: #1f2a38;
       border-radius: 8px;
       overflow: hidden;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .swiper-slide.destaque {
+      height: 450px;
+      background-color: #1f2a38;
+      border-radius: 8px;
+      /* overflow: hidden; */
       text-align: center;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
     }
@@ -84,9 +96,12 @@
     }
 
     body {
-      background-color: #121e28;
+      background-image: url('../images/doom.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
       color: white;
-      padding-top: 80px;
+      padding-top: 10px;
     }
 
     .popup-altura {
@@ -99,59 +114,219 @@
       border-radius: 10px;
       padding: 0;
     }
+
+    .menu-links.doom a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .menu-links.doom a:hover {
+      color: red;
+    }
+
+    iframe {
+      width: 80%;
+      height: 90vh;
+      border: none;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    }
+
+    .pdf-container {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      margin-top: 100px;
+    }
+
+    .pdf-container iframe {
+      width: 100%;
+      max-width: 900px;
+      height: 90vh;
+      border: none;
+      background-color: white;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .play-button {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10;
+    }
+
+
+    .play-button button {
+      padding: 15px 30px;
+      font-size: 1.5rem;
+      font-weight: bold;
+      background-color: #ff0000;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+      transition: transform 0.2s;
+    }
+
+    .play-button button:hover {
+      transform: scale(1.05);
+    }
+
+    .doom-button {
+      padding: 18px 40px;
+      font-size: 1.5rem;
+      font-weight: bold;
+      background: linear-gradient(45deg, #ff0000, #8b0000);
+      color: #fff;
+      border: 2px solid #ff0000;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+      transition: all 0.3s ease;
+      text-shadow: 1px 1px 2px black;
+      animation: glowPulse 2s infinite alternate;
+    }
+
+    .doom-button:hover {
+      transform: scale(1.05);
+      background: linear-gradient(45deg, #8b0000, #ff0000);
+      box-shadow: 0 0 30px rgba(255, 0, 0, 0.9);
+    }
+
+    @keyframes glowPulse {
+      0% {
+        box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+      }
+
+      100% {
+        box-shadow: 0 0 25px rgba(255, 0, 0, 0.9);
+      }
+    }
+
+    .logo img {
+      max-width: 100%;
+      height: 110px;
+    }
   </style>
 </head>
-
-<audio autoplay loop>
-    <source src="../html/audio/doomSoundtrack.mpeg" type="audio/mpeg">
-    Seu navegador não suporta áudio HTML5.
-  </audio>
 
 <body>
   <header>
     <nav class="nav-menu color-black">
       <canvas id="starCanvas" style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:0;"></canvas>
 
-      <div class="logo"><a href="home.html"><img class="logo" width="120px" height="50px"
-            src="../images/starwarspng.png" alt="" /></a>
+      <div class="logo"><a href="home.html"><img class="logo" width="120" height="120" src="../images/logoVermelha.png"
+            alt="" /></a>
       </div>
 
-      <div class="menu-links">
+      <div id="saber" onclick="togglelight()">
+        <div class="sabre">
+          <div id="light"></div>
+          <div class="meio"></div>
+          <div class="detalhesDeCima">
+            <div class="a1"></div>
+            <div class="a2"></div>
+            <div class="a3"></div>
+            <div class="a4"></div>
+          </div>
+          <div class="detalhesDoMeio">
+            <div class="b1"></div>
+            <div class="b2"></div>
+            <div class="b3"></div>
+          </div>
+          <div class="detalhesFundo">
+            <div class="ab3"></div>
+          </div>
+        </div>
+      </div>
+      <audio id="sabreAudio" src="audio/ligar.mpeg" preload="auto"></audio>
+
+
+      <div class="menu-links doom">
         <a clas href="home.html"><i class="fa-solid fa-house"></i>&nbsp;&nbsp;Home</a>
         <a href="filmes.html"><i class="fa-solid fa-clapperboard"></i>&nbsp;&nbsp;Filmes</a>
         <a href="series.html"><i class="fa-solid fa-film"></i>&nbsp;&nbsp;Séries</a>
         <a href="ranking.html"><i class="fa-solid fa-ranking-star"></i>&nbsp;&nbsp;Ranking</a>
-        <a href="cadastro.html"><i class="fa-solid fa-circle-plus"></i>&nbsp;&nbsp;Cadastro</a>
-        <a href="doom.html"><i class="fa-solid fa-circle-plus"></i>&nbsp;&nbsp;DOOM</a>
+        <a href="cadastro.html"><i class="fa-solid fas fa-pen"></i>&nbsp;Cadastro</a>
       </div>
+
     </nav>
   </header>
 
-  <!-- <div class="col-md-12 mt-5 text-center mt-3">
-    <h2 class="fw-bold text-uppercase text-white border-bottom border-danger pb-2 px-3 d-inline-block"
-      style="font-family: 'Inter', sans-serif; font-size: 2.5rem; letter-spacing: 2px;">
-      <i class="fa-solid fa-fire"></i>&nbsp;Destaque
-    </h2>
-  </div> -->
-
-  <div id="pinto" style="padding: 30px;">
-  <iframe src="../images/doom.pdf" width="100%" height="600px"></iframe>
-
-   </div>
-
+  <div class="play-button">
+    <button id="playDoom" class="doom-button">
+      <i class="fa-solid fa-skull-crossbones"></i>&nbsp;Liberte a Fúria do Doom Slayer!
+    </button>
   </div>
-  
+
+  <div class="pdf-container" id="pdfViewer" style="margin-top: 81px;">
+    <iframe src="doom.pdf"></iframe>
   </div>
+
+  <audio id="doomSound" src="../../audio/doomSoundtrack.mpeg"></audio>
 
   <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
   <script>
-    new Swiper('.swiper', {
-      slidesPerView: 4,
-      spaceBetween: 30,
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
+
+    document.getElementById('playDoom').addEventListener('click', function () {
+      document.getElementById('pdfViewer').style.display = 'flex';
+      document.getElementById('playDoom').style.display = 'none';
+      document.getElementById('doomSound').play();
+    });
+
+    $(document).ready(function () {
+
+      setTimeout(() => {
+        const swiper = new Swiper('.swiper', {
+          slidesPerView: 4,
+          spaceBetween: 30,
+          navigation: {
+            nextEl: '.swiper-button-next.filme',
+            prevEl: '.swiper-button-prev.filme',
+          },
+          loop: true,
+        });
+      }, 100); // Espera a renderização
+
+
+      setTimeout(() => {
+        //   const swiper = new Swiper('.destaque', {
+        //     slidesPerView: 1,
+        //     spaceBetween: 30,
+        //     navigation: {
+        //       nextEl: '.swiper-button-next.destaque',
+        //       prevEl: '.swiper-button-prev.destaque',
+        //     },
+        //   });
+        // }, 100); // Espera a renderização
+        const swiper = new Swiper('.destaque', {
+          slidesPerView: 1,
+          spaceBetween: 30,
+          loop: true,
+          speed: 1000,
+          effect: 'fade',
+          fadeEffect: {
+            crossFade: true
+          },
+          navigation: {
+            nextEl: '.swiper-button-next.destaque',
+            prevEl: '.swiper-button-prev.destaque',
+          },
+          on: {
+            slideChangeTransitionStart: function () {
+              this.slides.forEach(slide => {
+                const iframe = slide.querySelector('iframe');
+                if (iframe && iframe.src.includes('youtube.com')) {
+                  iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+                }
+              });
+            }
+          }
+
+        });
+      }, 100); // Espera a renderização
     });
 
     const canvas = document.getElementById('starCanvas');
@@ -213,11 +388,9 @@
       observer.observe(element);
     });
 
-    
-
 
   </script>
-  <script src="../homeScript.js"></script>
+  <script src="../filmesScript.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://kit.fontawesome.com/eb6608b6fd.js" crossorigin="anonymous"></script>
 </body>
