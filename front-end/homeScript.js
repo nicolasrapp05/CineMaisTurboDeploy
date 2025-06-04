@@ -8,23 +8,14 @@ $(document).ready(function () {
         let html = "";
         if (top10Items && top10Items.length > 0) {
           top10Items.forEach((item, index) => {
-            let detailPageUrl = "";
-            if (itemType === "filme") {
-              detailPageUrl = `detalhesFilme.html?id=${item.id}`;
-            } else if (itemType === "serie") {
-              detailPageUrl = `detalhesSerie.html?id=${item.id}`;
-            }
-
             html += `
                     <div class="swiper-slide">
                         <div class="ranking-number">${index + 1}</div>
-                        <a href="${detailPageUrl}">
-                            <img data-id="${
-                              item.id
-                            }" class="poster ${itemType}-img" src="${
+                        <img data-id="${
+                          item.id
+                        }" class="poster ${itemType}-img" src="${
               item.foto
             }" alt="${item.nome}">
-                        </a>
                     </div>
                     `;
           });
