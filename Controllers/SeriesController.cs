@@ -5,7 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using CineTurbo.Data;
 using CineTurbo.Models;
-using CineMaisTurbo.Models; // Necessário para acessar o modelo Serie
+using CineMaisTurbo.Models;
+using Microsoft.EntityFrameworkCore; // Necessário para acessar o modelo Serie
 
 namespace CineTurbo.Controllers
 {
@@ -23,7 +24,8 @@ namespace CineTurbo.Controllers
         [HttpPost]
         public async Task<IActionResult> AddSerie([FromBody] Serie serie)
         {
-            if (!ModelState.IsValid) {
+            if (!ModelState.IsValid)
+            {
                 return BadRequest(ModelState);
             }
 
@@ -42,7 +44,7 @@ namespace CineTurbo.Controllers
         // }
 
         [HttpGet]
-        public ActionResult<IEnumerable<Filme>> GetSeries([FromQuery] string? genero)
+        public ActionResult<IEnumerable<Filme>> GetSeries([FromQuery] string genero)
         {
             var query = _appDbContext.SeriesDB.AsQueryable();
 
@@ -55,13 +57,14 @@ namespace CineTurbo.Controllers
 
             return Ok(query.ToList());
         }
-        
+
         [HttpGet("{id}")]
         public async Task<ActionResult<Serie>> GetSerie(int id)
         {
             var serie = await _appDbContext.SeriesDB.FindAsync(id);
 
-            if (serie == null) {
+            if (serie == null)
+            {
                 return NotFound("Serie não encontrado!");
             }
 
@@ -73,7 +76,8 @@ namespace CineTurbo.Controllers
         {
             var serieExistente = await _appDbContext.SeriesDB.FindAsync(id);
 
-            if (serieExistente == null) {
+            if (serieExistente == null)
+            {
                 return NotFound("Serie não encontrado!");
             }
 
@@ -98,7 +102,8 @@ namespace CineTurbo.Controllers
         {
             var serie = await _appDbContext.SeriesDB.FindAsync(id);
 
-            if (serie == null) {
+            if (serie == null)
+            {
                 return NotFound("Serie não encontrado!");
             }
 
@@ -107,6 +112,23 @@ namespace CineTurbo.Controllers
             await _appDbContext.SaveChangesAsync();
 
             return Ok("Serie deletado");
+        }
+
+        [HttpGet("top10")]
+        public async Task<ActionResult<IEnumerable<Serie>>> GetTop10Series()
+        {
+            var topSeries = await _appDbContext.SeriesDB
+            .OrderByDescending(s => s.AvaliacaoImdb)
+            .Take(10)
+            .ToListAsync();
+            return Ok(topSeries);
+        }
+
+        [HttpGet("total")]
+        public async Task<ActionResult<int>> GetTotalSeries()
+        {
+            var totalSeries = await _appDbContext.SeriesDB.CountAsync();
+            return Ok(totalSeries);
         }
     }
 }

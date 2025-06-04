@@ -4,7 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using CineTurbo.Data;
-using CineTurbo.Models; // Necessário para acessar o modelo Filme
+using CineTurbo.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace CineTurbo.Controllers
 {
@@ -22,7 +23,8 @@ namespace CineTurbo.Controllers
         [HttpPost]
         public async Task<IActionResult> AddFilme([FromBody] Filme filme)
         {
-            if (!ModelState.IsValid) {
+            if (!ModelState.IsValid)
+            {
                 return BadRequest(ModelState);
             }
 
@@ -41,7 +43,7 @@ namespace CineTurbo.Controllers
         // }
 
         [HttpGet]
-        public ActionResult<IEnumerable<Filme>> GetFilmes([FromQuery] string? genero)
+        public ActionResult<IEnumerable<Filme>> GetFilmes([FromQuery] string genero)
         {
             var query = _appDbContext.FilmesDB.AsQueryable();
 
@@ -54,13 +56,14 @@ namespace CineTurbo.Controllers
 
             return Ok(query.ToList());
         }
-        
+
         [HttpGet("{id}")]
         public async Task<ActionResult<Filme>> GetFilme(int id)
         {
             var filme = await _appDbContext.FilmesDB.FindAsync(id);
 
-            if (filme == null) {
+            if (filme == null)
+            {
                 return NotFound("Filme não encontrado!");
             }
 
@@ -99,7 +102,8 @@ namespace CineTurbo.Controllers
         {
             var filme = await _appDbContext.FilmesDB.FindAsync(id);
 
-            if (filme == null) {
+            if (filme == null)
+            {
                 return NotFound("Filme não encontrado!");
             }
 
@@ -108,6 +112,23 @@ namespace CineTurbo.Controllers
             await _appDbContext.SaveChangesAsync();
 
             return Ok("Filme deletado");
+        }
+
+        [HttpGet("top10")]
+        public async Task<ActionResult<IEnumerable<Filme>>> GetTop10Filmes()
+        {
+            var topFilmes = await _appDbContext.FilmesDB
+            .OrderByDescending(f => f.AvaliacaoImdb)
+            .Take(10)
+            .ToListAsync();
+            return Ok(topFilmes);
+        }
+
+        [HttpGet("total")]
+        public async Task<ActionResult<int>> GetTotalFilmes()
+        {
+            var totalFilmes = await _appDbContext.FilmesDB.CountAsync();
+            return Ok(totalFilmes);
         }
     }
 }

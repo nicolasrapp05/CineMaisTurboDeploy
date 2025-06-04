@@ -1,592 +1,476 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="/path/to/lightsabers.css" />
+    <link rel="icon" type="image/png" href="../images/plusAmarelo.png" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HOME</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/css/adminlte.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
+    />
 
-<head>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <link rel="stylesheet" href="/path/to/lightsabers.css">
-  <link rel="icon" type="image/png" href="../images/plusAmarelo.png" />
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HOME</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../styles/styles.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/css/adminlte.min.css">
-  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-
-  <style>
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.6s ease-out;
-    }
-
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .nav-menu {
-      position: relative;
-      background-color: black;
-      overflow: hidden;
-      padding: 44px;
-      height: 89px;
-
-    }
-
-    .nav-menu {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      background-color: rgba(0, 0, 0, 0.85);
-      backdrop-filter: blur(5px);
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 12px 24px;
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .nav-menu.scrolled {
-      background-color: rgba(0, 0, 0, 0.95);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.9);
-    }
-
-    .nav-menu * {
-      position: relative;
-      z-index: 1;
-    }
-
-    body {
-      overflow-x: hidden;
-    }
-
-    .swiper {
-      width: 100vw;
-      height: 70vh;
-      /* padding: 20px 40px; */
-    }
-
-    @keyframes movingBackground {
-      from {
-        background-position: 0 0;
+    <style>
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.6s ease-out;
       }
 
-      to {
-        background-position: 1000px 0;
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
       }
-    }
 
-    body {
-      background-image: url('../images/fundo-espacial.jpg');
-      background-repeat: repeat-x;
-      animation: movingBackground 100s linear infinite;
-    }
+      .nav-menu {
+        position: relative;
+        background-color: black;
+        overflow: hidden;
+        padding: 44px;
+        height: 89px;
+      }
 
+      .nav-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        background-color: rgba(0, 0, 0, 0.85);
+        backdrop-filter: blur(5px);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 24px;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      }
 
-    .swiper-slide {
-      background-color: #1f2a38;
-      border-radius: 10px;
-      text-align: center;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 1.5rem;
-      color: white;
-      height: 100%;
-    }
+      .nav-menu.scrolled {
+        background-color: rgba(0, 0, 0, 0.95);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.9);
+      }
 
-    .swiper-pagination-bullet {
-      background: #999;
-      opacity: 1;
-    }
+      .nav-menu * {
+        position: relative;
+        z-index: 1;
+      }
 
-    .swiper-pagination-bullet-active {
-      background: #007bff;
-    }
+      body {
+        overflow-x: hidden;
+      }
 
-    body {
-      background-color: #121e28;
-      color: white;
-      padding-top: 80px;
-    }
+      .swiper {
+        width: 100vw;
+        height: 70vh;
+        /* padding: 20px 40px; */
+      }
 
-    .popup-altura {
-      height: auto;
-      max-height: 90vh;
-      overflow-y: auto;
-      background: linear-gradient(rgba(0, 0, 0, 0.92), rgba(0, 0, 0, 0.92));
-      background-size: cover;
-      background-position: center;
-      border-radius: 10px;
-      padding: 0;
-    }
+      @keyframes movingBackground {
+        from {
+          background-position: 0 0;
+        }
 
-    .top10Swiper {
-      height: 120%;
-      position: relative;
-    }
+        to {
+          background-position: 1000px 0;
+        }
+      }
 
-    .top10Swiper .swiper-slide {
-      width: 250px;
-      display: flex;
-      align-items: center;
-      position: relative;
-      background: transparent;
-    }
+      body {
+        background-image: url("../images/fundo-espacial.jpg");
+        background-repeat: repeat-x;
+        animation: movingBackground 100s linear infinite;
+      }
 
-    .ranking-number {
-      font-size: 120px;
-      font-weight: bold;
-      color: rgba(255, 255, 255, 0.08);
-      margin-right: -10px;
-      z-index: 1;
-    }
+      .swiper-slide {
+        background-color: #1f2a38;
+        border-radius: 10px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem;
+        color: white;
+        height: 100%;
+      }
 
-    .poster {
-      width: 180px;
-      border-radius: 10px;
-      position: relative;
-      z-index: 2;
-    }
+      .swiper-pagination-bullet {
+        background: #999;
+        opacity: 1;
+      }
 
-    .swiper-button-prev,
-    .swiper-button-next {
-      color: white;
-      background-color: rgba(0, 0, 0, 0.4);
-      padding: 10px;
-      border-radius: 50%;
-      top: 40%;
-    }
+      .swiper-pagination-bullet-active {
+        background: #007bff;
+      }
 
-    .top10Swiper .swiper-wrapper {
-      padding-right: 40px;
-      box-sizing: border-box;
-    }
+      body {
+        background-color: #121e28;
+        color: white;
+        padding-top: 80px;
+      }
 
-    .swiper.top10Swiper {
-      padding-right: 80px;
-      padding-left: 30px;
-    }
-  </style>
-</head>
+      .popup-altura {
+        height: auto;
+        max-height: 90vh;
+        overflow-y: auto;
+        background: linear-gradient(rgba(0, 0, 0, 0.92), rgba(0, 0, 0, 0.92));
+        background-size: cover;
+        background-position: center;
+        border-radius: 10px;
+        padding: 0;
+      }
 
-<body>
-  <header>
-    <nav class="nav-menu color-black">
-      <canvas id="starCanvas" style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:0;"></canvas>
+      .top10Swiper {
+        height: 120%;
+        position: relative;
+      }
 
-      <div class="logo"><a href="home.html"><img class="logo" width="120px" height="50px"
-            src="../images/starwarspng.png" alt="" /></a>
-      </div>
+      .top10Swiper .swiper-slide {
+        width: 250px;
+        display: flex;
+        align-items: center;
+        position: relative;
+        background: transparent;
+      }
 
-      <div class="menu-links">
-        <a clas href="home.html"><i class="fa-solid fa-house"></i>&nbsp;&nbsp;Home</a>
-        <a href="filmes.html"><i class="fa-solid fa-clapperboard"></i>&nbsp;&nbsp;Filmes</a>
-        <a href="series.html"><i class="fa-solid fa-film"></i>&nbsp;&nbsp;Séries</a>
-        <a href="ranking.html"><i class="fa-solid fa-ranking-star"></i>&nbsp;&nbsp;Ranking</a>
-        <a href="cadastro.html"><i class="fa-solid fas fa-edit"></i>&nbsp;&nbsp;Cadastro</a>
-      </div>
-    </nav>
-  </header>
+      .ranking-number {
+        font-size: 120px;
+        font-weight: bold;
+        color: rgba(255, 255, 255, 0.08);
+        margin-right: -10px;
+        z-index: 1;
+      }
 
-  <div class="swiper mySwiper" style="margin-top: 9px; position: relative; height: 500px;">
-    <canvas id="starCanvas" style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:0;"></canvas>
+      .poster {
+        width: 180px;
+        border-radius: 10px;
+        position: relative;
+        z-index: 2;
+      }
 
-    <div class="swiper-wrapper">
-      <div class="swiper-slide"
-        style="background-color: black; display: flex; justify-content: center; align-items: center;">
-        <img src="../images/brmvindo.jpg" alt="" class="img-slide"
-          style="width: 100%; height: 87%; object-fit: cover; border-radius: 0;">
-      </div>
-      <div class="swiper-slide"
-        style="background-color: black; display: flex; justify-content: center; align-items: center;">
-        <img src="../images/brmvindo.jpg" alt="" class="img-slide"
-          style="width: 100%; height: 87%; object-fit: cover; border-radius: 0;">
-      </div>
-    </div>
+      .swiper-button-prev,
+      .swiper-button-next {
+        color: white;
+        background-color: rgba(0, 0, 0, 0.4);
+        padding: 10px;
+        border-radius: 50%;
+        top: 40%;
+      }
 
-    <div class="swiper-pagination mb-3"></div>
-  </div>
+      .top10Swiper .swiper-wrapper {
+        padding-right: 40px;
+        box-sizing: border-box;
+      }
 
-  <div class="container">
-    <div class="container mt-5">
-      <div class="row" style="justify-content: center;">
-        <div class="col-lg-3 col-6">
-          <div class="small-box bg-info">
-            <div class="inner">
-              <h3>250</h3>
-              <p>Filmes Cadastrados</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-film-marker"></i>
-            </div>
-            <a href="../html/filmes.html" class="small-box-footer">Ver mais <i class="fas fa-arrow-circle-right"></i></a>
-          </div>
+      .swiper.top10Swiper {
+        padding-right: 80px;
+        padding-left: 30px;
+      }
+
+      .swiper-slide a {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <nav class="nav-menu color-black">
+        <canvas
+          id="starCanvas"
+          style="
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+          "
+        ></canvas>
+
+        <div class="logo">
+          <a href="home.html"
+            ><img
+              class="logo"
+              width="120px"
+              height="50px"
+              src="../images/starwarspng.png"
+              alt=""
+          /></a>
         </div>
 
-        <div class="col-lg-3 col-6">
-          <div class="small-box bg-warning">
-            <div class="inner">
-              <h3>120</h3>
-              <p>Séries Disponíveis</p>
+        <div class="menu-links">
+          <a clas href="home.html"
+            ><i class="fa-solid fa-house"></i>&nbsp;&nbsp;Home</a
+          >
+          <a href="filmes.html"
+            ><i class="fa-solid fa-clapperboard"></i>&nbsp;&nbsp;Filmes</a
+          >
+          <a href="series.html"
+            ><i class="fa-solid fa-film"></i>&nbsp;&nbsp;Séries</a
+          >
+          <a href="ranking.html"
+            ><i class="fa-solid fa-ranking-star"></i>&nbsp;&nbsp;Ranking</a
+          >
+          <a href="cadastro.html"
+            ><i class="fa-solid fas fa-edit"></i>&nbsp;&nbsp;Cadastro</a
+          >
+        </div>
+      </nav>
+    </header>
+
+    <div
+      class="swiper mySwiper"
+      style="margin-top: 9px; position: relative; height: 500px"
+    >
+      <canvas
+        id="starCanvas"
+        style="
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 0;
+        "
+      ></canvas>
+
+      <div class="swiper-wrapper">
+        <div
+          class="swiper-slide"
+          style="
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          "
+        >
+          <img
+            src="../images/brmvindo.jpg"
+            alt=""
+            class="img-slide"
+            style="
+              width: 100%;
+              height: 87%;
+              object-fit: cover;
+              border-radius: 0;
+            "
+          />
+        </div>
+        <div
+          class="swiper-slide"
+          style="
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          "
+        >
+          <img
+            src="../images/brmvindo.jpg"
+            alt=""
+            class="img-slide"
+            style="
+              width: 100%;
+              height: 87%;
+              object-fit: cover;
+              border-radius: 0;
+            "
+          />
+        </div>
+      </div>
+
+      <div class="swiper-pagination mb-3"></div>
+    </div>
+
+    <div class="container">
+      <div class="container mt-5">
+        <div class="row" style="justify-content: center">
+          <div class="col-lg-3 col-6">
+            <div class="small-box bg-info">
+              <div class="inner">
+                <h3 id="total-filmes"></h3>
+                <p>Filmes Cadastrados</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-film-marker"></i>
+              </div>
+              <a href="../html/filmes.html" class="small-box-footer"
+                >Ver mais <i class="fas fa-arrow-circle-right"></i
+              ></a>
             </div>
-            <div class="icon">
-              <i class="ion ion-videocamera"></i>
+          </div>
+
+          <div class="col-lg-3 col-6">
+            <div class="small-box bg-warning">
+              <div class="inner">
+                <h3 id="total-series"></h3>
+                <p>Séries Disponíveis</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-videocamera"></i>
+              </div>
+              <a href="../html/series.html" class="small-box-footer"
+                >Ver mais <i class="fas fa-arrow-circle-right"></i
+              ></a>
             </div>
-            <a href="../html/series.html" class="small-box-footer">Ver mais <i class="fas fa-arrow-circle-right"></i></a>
           </div>
         </div>
       </div>
     </div>
 
-  </div>
-
-  <div class="col-md-12 mt-5 text-center mt-3 mb-3">
-
-    <h2 class="fw-bold text-uppercase text-white border-bottom border-warning pb-2 px-3 d-inline-block mb-5"
-      style="font-family: 'Inter', sans-serif; font-size: 2.5rem; letter-spacing: 2px;">
-      <i class="fa-solid fa-clapperboard"></i>&nbsp;TOP 10 FILMES
-    </h2>
-  </div>
-  <div class="swiper top10Swiper mb-4">
-
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-        <div class="ranking-number">1</div>
-        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
-      </div>
-      <div class="swiper-slide">
-        <div class="ranking-number">2</div>
-        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
-      </div>
-      <div class="swiper-slide">
-        <div class="ranking-number">3</div>
-        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
-      </div>
-      <div class="swiper-slide">
-        <div class="ranking-number">4</div>
-        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
-      </div>
-      <div class="swiper-slide">
-        <div class="ranking-number">5</div>
-        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
-      </div>
-      <div class="swiper-slide">
-        <div class="ranking-number">6</div>
-        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
-      </div>
-      <div class="swiper-slide">
-        <div class="ranking-number">7</div>
-        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
-      </div>
-      <div class="swiper-slide">
-        <div class="ranking-number">8</div>
-        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
-      </div>
-      <div class="swiper-slide">
-        <div class="ranking-number">9</div>
-        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 2">
-      </div>
-      <div class="swiper-slide">
-        <div class="ranking-number">10</div>
-        <a href="doom.html">
-        <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/zEF6MnsJyoVB6dgtNCGJLv6Ed2T.jpg" class="poster" alt="Filme 3">
-
-        </a>
-      </div>
+    <div class="col-md-12 mt-5 text-center mt-3 mb-3">
+      <h2
+        class="fw-bold text-uppercase text-white border-bottom border-warning pb-2 px-3 d-inline-block mb-5"
+        style="
+          font-family: 'Inter', sans-serif;
+          font-size: 2.5rem;
+          letter-spacing: 2px;
+        "
+      >
+        <i class="fa-solid fa-clapperboard"></i>&nbsp;TOP 10 FILMES
+      </h2>
     </div>
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-  </div>
-
-  <div class="col-md-12 mt-5 text-center mt-3 mb-3">
-
-    <h2 class="fw-bold text-uppercase text-white border-bottom border-primary pb-2 px-3 d-inline-block mb-5"
-      style="font-family: 'Inter', sans-serif; font-size: 2.5rem; letter-spacing: 2px;">
-      <i class="fa-solid fa-film"></i>&nbsp;TOP 10 SÉRIES
-    </h2>
-  </div>
-  <div class="swiper top10Swiper mb-4">
-
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-        <div class="ranking-number">1</div>
-        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
-      </div>
-      <div class="swiper-slide">
-        <div class="ranking-number">2</div>
-        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
-      </div>
-      <div class="swiper-slide">
-        <div class="ranking-number">3</div>
-        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
-      </div>
-      <div class="swiper-slide">
-        <div class="ranking-number">4</div>
-        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
-      </div>
-      <div class="swiper-slide">
-        <div class="ranking-number">5</div>
-        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
-      </div>
-      <div class="swiper-slide">
-        <div class="ranking-number">6</div>
-        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
-      </div>
-      <div class="swiper-slide">
-        <div class="ranking-number">7</div>
-        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
-      </div>
-      <div class="swiper-slide">
-        <div class="ranking-number">8</div>
-        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
-      </div>
-      <div class="swiper-slide">
-        <div class="ranking-number">9</div>
-        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 2">
-      </div>
-      <div class="swiper-slide">
-        <div class="ranking-number">10</div>
-        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 3">
-      </div>
+    <div class="swiper top10Swiper mb-4">
+      <div class="swiper-wrapper"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
     </div>
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-  </div>
 
-
-  <!-- <div class="col-md-12 mt-5 text-center mt-3">
-    <h2 class="fw-bold text-uppercase text-white border-bottom border-danger pb-2 px-3 d-inline-block mb-5"
-      style="font-family: 'Inter', sans-serif; font-size: 2.5rem; letter-spacing: 2px;">
-      <i class="fa-solid fa-rocket"></i>&nbsp;LANÇAMENTOS FILMES
-    </h2>
-  </div>
-
-  <div class="swiper top10Swiper mb-4">
-
-    <div class="swiper-wrapper top10">
-      <div class="swiper-slide">
-        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
-      </div>
-      <div class="swiper-slide">
-        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
-      </div>
-      <div class="swiper-slide">
-        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
-      </div>
-      <div class="swiper-slide">
-        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
-      </div>
-      <div class="swiper-slide">
-        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
-      </div>
-      <div class="swiper-slide">
-        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
-      </div>
-      <div class="swiper-slide">
-        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
-      </div>
-      <div class="swiper-slide">
-        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
-      </div>
-      <div class="swiper-slide">
-        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 2">
-      </div>
-      <div class="swiper-slide">
-        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 3">
-      </div>
+    <div class="col-md-12 mt-5 text-center mt-3 mb-3">
+      <h2
+        class="fw-bold text-uppercase text-white border-bottom border-primary pb-2 px-3 d-inline-block mb-5"
+        style="
+          font-family: 'Inter', sans-serif;
+          font-size: 2.5rem;
+          letter-spacing: 2px;
+        "
+      >
+        <i class="fa-solid fa-film"></i>&nbsp;TOP 10 SÉRIES
+      </h2>
     </div>
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-
-  </div>
-  <div class="col-md-12 mt-5 text-center mt-3">
-    <h2 class="fw-bold text-uppercase text-white border-bottom border-danger pb-2 px-3 d-inline-block mb-5"
-      style="font-family: 'Inter', sans-serif; font-size: 2.5rem; letter-spacing: 2px;">
-      <i class="fa-solid fa-rocket"></i>&nbsp;LANÇAMENTOS SÉRIES
-    </h2>
-  </div>
-
-  <div class="swiper top10Swiper mb-4">
-
-    <div class="swiper-wrapper top10">
-      <div class="swiper-slide">
-        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
-      </div>
-      <div class="swiper-slide">
-        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
-      </div>
-      <div class="swiper-slide">
-        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
-      </div>
-      <div class="swiper-slide">
-        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
-      </div>
-      <div class="swiper-slide">
-        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
-      </div>
-      <div class="swiper-slide">
-        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
-      </div>
-      <div class="swiper-slide">
-        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
-      </div>
-      <div class="swiper-slide">
-        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
-      </div>
-      <div class="swiper-slide">
-        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 2">
-      </div>
-      <div class="swiper-slide">
-        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 3">
-      </div>
+    <div class="swiper top10Swiper mb-4">
+      <div class="swiper-wrapper"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
     </div>
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
 
-  </div>
-  <div class="col-md-12 mt-5 text-center mt-3">
-    <h2 class="fw-bold text-uppercase text-white border-bottom border-info pb-2 px-3 d-inline-block mb-5"
-      style="font-family: 'Inter', sans-serif; font-size: 2.5rem; letter-spacing: 2px;">
-      <i class="fa-solid fa-star"></i>&nbsp;RECOMENDAÇÕES DA CASA
-    </h2>
-  </div>
+    <footer>&copy; 2025 Cine + Turbo. Todos os direitos reservados.</footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script>
+      const swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        loop: true,
+      });
 
-  <div class="swiper top10Swiper mb-4">
+      const top10Swiper = new Swiper(".top10Swiper", {
+        slidesPerView: "auto",
+        spaceBetween: 20,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
 
-    <div class="swiper-wrapper top10">
-      <div class="swiper-slide">
-        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
-      </div>
-      <div class="swiper-slide">
-        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
-      </div>
-      <div class="swiper-slide">
-        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
-      </div>
-      <div class="swiper-slide">
-        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
-      </div>
-      <div class="swiper-slide">
-        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
-      </div>
-      <div class="swiper-slide">
-        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
-      </div>
-      <div class="swiper-slide">
-        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
-      </div>
-      <div class="swiper-slide">
-        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 1">
-      </div>
-      <div class="swiper-slide">
-        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 2">
-      </div>
-      <div class="swiper-slide">
-        <img src="../images/batmanPoster.webp" class="poster" alt="Filme 3">
-      </div>
-    </div>
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div> -->
+      const canvas = document.getElementById("starCanvas");
+      const ctx = canvas.getContext("2d");
+      let stars = [];
 
-  </div>
+      function resizeCanvas() {
+        canvas.width = document.querySelector(".nav-menu").offsetWidth;
+        canvas.height = document.querySelector(".nav-menu").offsetHeight;
+      }
 
-  <footer>&copy; 2025 Cine + Turbo. Todos os direitos reservados.</footer>
-  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-  <script>
+      window.addEventListener("resize", () => {
+        resizeCanvas();
+        generateStars();
+      });
 
-    const swiper = new Swiper(".mySwiper", {
-      slidesPerView: 1,
-      spaceBetween: 30,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      loop: true,
-    });
+      function generateStars() {
+        stars = [];
+        for (let i = 0; i < 100; i++) {
+          stars.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            radius: Math.random() * 1.5,
+            alpha: Math.random(),
+            delta: Math.random() * 0.02,
+          });
+        }
+      }
 
-    const top10Swiper = new Swiper(".top10Swiper", {
-      slidesPerView: "auto",
-      spaceBetween: 20,
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-    });
+      function animateStars() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (let star of stars) {
+          ctx.beginPath();
+          ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(255, 255, 255, ${star.alpha})`;
+          ctx.fill();
+          star.alpha += star.delta;
+          if (star.alpha <= 0 || star.alpha >= 1) star.delta *= -1;
+        }
+        requestAnimationFrame(animateStars);
+      }
 
-
-    const canvas = document.getElementById('starCanvas');
-    const ctx = canvas.getContext('2d');
-    let stars = [];
-
-    function resizeCanvas() {
-      canvas.width = document.querySelector('.nav-menu').offsetWidth;
-      canvas.height = document.querySelector('.nav-menu').offsetHeight;
-    }
-
-    window.addEventListener('resize', () => {
       resizeCanvas();
       generateStars();
-    });
+      animateStars();
 
-    function generateStars() {
-      stars = [];
-      for (let i = 0; i < 100; i++) {
-        stars.push({
-          x: Math.random() * canvas.width,
-          y: Math.random() * canvas.height,
-          radius: Math.random() * 1.5,
-          alpha: Math.random(),
-          delta: Math.random() * 0.02
-        });
-      }
-    }
-
-    function animateStars() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      for (let star of stars) {
-        ctx.beginPath();
-        ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 255, 255, ${star.alpha})`;
-        ctx.fill();
-        star.alpha += star.delta;
-        if (star.alpha <= 0 || star.alpha >= 1) star.delta *= -1;
-      }
-      requestAnimationFrame(animateStars);
-    }
-
-    resizeCanvas();
-    generateStars();
-    animateStars();
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.1,
         }
+      );
+
+      document.querySelectorAll(".fade-in").forEach((element) => {
+        observer.observe(element);
       });
-    }, {
-      threshold: 0.1
-    });
-
-    document.querySelectorAll('.fade-in').forEach(element => {
-      observer.observe(element);
-    });
-
-  </script>
-  <script src="../homeScript.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/js/adminlte.min.js"></script>
-  <script src="https://kit.fontawesome.com/eb6608b6fd.js" crossorigin="anonymous"></script>
-</body>
-
+    </script>
+    <script src="../homeScript.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/js/adminlte.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/eb6608b6fd.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
