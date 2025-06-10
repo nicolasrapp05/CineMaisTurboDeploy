@@ -37,6 +37,42 @@ O sistema permite realizar o cadastro, listagem, edição, exclusão de filmes e
 
 ---
 
-## 💻 Acesso ao MVP
+## 🚀 Como Executar o Projeto
 
-- (link MVP)
+### Pré-requisitos
+
+- [.NET SDK 8.0+](https://dotnet.microsoft.com/en-us/download)
+- [MySQL Server](https://dev.mysql.com/downloads/mysql/)
+- Git instalado
+
+---
+
+### Passos
+
+```bash
+# 1. Clone o repositório
+git clone https://github.com/GuiSanchez1910/CineMaisTurbo.git
+
+# 2. Acesse a pasta do projeto
+cd .\CineMaisTurbo\
+
+# 3. Altere a senha do banco de dados, para sua senha local
+arquivo "appsettings.json" > password:"sua senha"
+
+# 4. Restaure os pacotes
+dotnet restore
+
+# 5. Aplique as migrações
+dotnet ef database update
+
+# 6. Execute a API
+dotnet run
+
+# 7. Instale a extensão "Live Serer"
+Extensões > Live Server
+
+# 8. Entre no arquivo home.html
+front-end > html > home.html
+
+# 9. Execute o front-end
+Clique em "Go Live" no canto inferior direito
