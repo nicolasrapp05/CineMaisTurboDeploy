@@ -33,7 +33,7 @@ O sistema permite realizar o cadastro, listagem, edição, exclusão de filmes e
 
 ## 📷 Video Pitch
 
-- (link video)
+- https://www.youtube.com/watch?v=iodfROTlSdo
 
 ---
 
