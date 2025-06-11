@@ -7,7 +7,7 @@ WORKDIR /source
 #
 # IMPORTANTE: Verifique se o nome do seu arquivo de projeto é realmente "CineMaisTurbo.csproj".
 # Se for diferente, ajuste o nome nos comandos COPY e RUN abaixo.
-COPY CineMaisTurbo.csproj .
+COPY CineTurbo.csproj .
 RUN dotnet restore
 
 # Agora, copia todo o resto do código da aplicação.
