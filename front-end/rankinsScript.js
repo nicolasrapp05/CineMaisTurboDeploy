@@ -1,23 +1,22 @@
 $(document).ready(function () {
-    $.ajax({
-        type: "GET",
-        url: "http://localhost:5018/api/filmes",
-        dataType: "json",
-        success: function (response) {
+  $.ajax({
+    type: "GET",
+    url: "https://cinemaisturbodeploy.onrender.com/api/filmes",
+    dataType: "json",
+    success: function (response) {
+      response.sort((a, b) => b.avaliacao - a.avaliacao);
 
-            response.sort((a, b) => b.avaliacao - a.avaliacao);
+      let html = "";
 
-            let html = ''
-
-            response.forEach(filme => {
-                html +=`
+      response.forEach((filme) => {
+        html += `
                         <div>
                             <img data-id="${filme.id}" width=300 src="${filme.foto}" alt="${filme.nome}">
                         </div>
                     `;
-            });
+      });
 
-            $('#filmes-container').append(html);
-        }
-    });
+      $("#filmes-container").append(html);
+    },
+  });
 });

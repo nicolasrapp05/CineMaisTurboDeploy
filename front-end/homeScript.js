@@ -35,13 +35,13 @@ $(document).ready(function () {
   }
 
   fetchAndDisplayTop10(
-    "http://localhost:5018/api/filmes/top10",
+    "https://cinemaisturbodeploy.onrender.com/api/filmes/top10",
     ".top10Swiper .swiper-wrapper:eq(0)",
     "filme"
   );
 
   fetchAndDisplayTop10(
-    "http://localhost:5018/api/series/top10",
+    "https://cinemaisturbodeploy.onrender.com/api/series/top10",
     ".top10Swiper .swiper-wrapper:eq(1)",
     "serie"
   );
@@ -49,7 +49,7 @@ $(document).ready(function () {
   function fetchTotalFilmes() {
     $.ajax({
       type: "GET",
-      url: "http://localhost:5018/api/filmes/total",
+      url: "https://cinemaisturbodeploy.onrender.com/api/filmes/total",
       dataType: "json",
       success: function (total) {
         $("#total-filmes").text(total);
@@ -64,7 +64,7 @@ $(document).ready(function () {
   function fetchTotalSeries() {
     $.ajax({
       type: "GET",
-      url: "http://localhost:5018/api/series/total",
+      url: "https://cinemaisturbodeploy.onrender.com/api/series/total",
       dataType: "json",
       success: function (total) {
         $("#total-series").text(total);

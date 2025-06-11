@@ -1,9 +1,8 @@
-
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById("filmes-container");
 
   if (container) {
-    fetch("http://localhost:5018/api/filmes")
+    fetch("https://cinemaisturbodeploy.onrender.com/api/filmes")
       .then((res) => {
         if (!res.ok) {
           throw new Error(`HTTP error! status: ${res.status}`);
@@ -59,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
 
       const tipo = tipoSelect.value;
-      const apiUrl = `http://localhost:5018/api/${tipo}`;
+      const apiUrl = `https://cinemaisturbodeploy.onrender.com/api/${tipo}`;
 
       mensagemStatus.textContent = "";
       mensagemStatus.style.color = "";
@@ -125,16 +124,16 @@ document.addEventListener("DOMContentLoaded", () => {
           console.log("Cadastro bem-sucedido:", result);
 
           Swal.fire({
-          title: "Sucesso!",
-          text: "Cadastro bem sucedido!",
-          icon: "success",
-          timer: 2000, // Fecha automaticamente após 2 segundos
-          showConfirmButton: false // Remove botão "OK"
-        });
+            title: "Sucesso!",
+            text: "Cadastro bem sucedido!",
+            icon: "success",
+            timer: 2000, // Fecha automaticamente após 2 segundos
+            showConfirmButton: false, // Remove botão "OK"
+          });
 
-        setTimeout(() => {
-          window.location.href = "home.html";
-        }, 2000); // mesmo tempo do timer acima
+          setTimeout(() => {
+            window.location.href = "home.html";
+          }, 2000); // mesmo tempo do timer acima
 
           cadastroForm.reset();
 
