@@ -13,4 +13,4 @@ WORKDIR /app
 COPY --from=build /app/out .
 
 EXPOSE 80
-ENTRYPOINT ["dotnet", "CineTurbo.dll"]
+ENTRYPOINT ["dotnet", "CineMaisTurbo.dll"]
