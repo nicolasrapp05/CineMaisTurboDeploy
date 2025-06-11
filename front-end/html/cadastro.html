@@ -1,233 +1,294 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
-<head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="icon" type="image/png" href="../images/plusAmarelo.png" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CADASTRO</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="../styles/styles.css" />
-    <script src="https://kit.fontawesome.com/eb6608b6fd.js" crossorigin="anonymous"></script>
-</head>
+    <script
+      src="https://kit.fontawesome.com/eb6608b6fd.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-<style>
+  <style>
     .nav-menu {
-        position: relative;
-        background-color: black;
-        overflow: hidden;
-        padding: 44px;
-        height: 89px;
-
+      position: relative;
+      background-color: black;
+      overflow: hidden;
+      padding: 44px;
+      height: 89px;
     }
 
     .nav-menu {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 1000;
-        background-color: rgba(0, 0, 0, 0.85);
-        backdrop-filter: blur(5px);
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 12px 24px;
-        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background-color: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(5px);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 24px;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
     }
 
     .nav-menu.scrolled {
-        background-color: rgba(0, 0, 0, 0.95);
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.9);
+      background-color: rgba(0, 0, 0, 0.95);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.9);
     }
 
     .nav-menu * {
-        position: relative;
-        z-index: 1;
+      position: relative;
+      z-index: 1;
     }
 
     .cadastro-container {
-        margin-top: 118px;
+      margin-top: 118px;
     }
-</style>
+  </style>
 
-<body>
+  <body>
     <header>
-        <nav class="nav-menu color-black">
-            <canvas id="starCanvas"
-                style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:0;"></canvas>
+      <nav class="nav-menu color-black">
+        <canvas
+          id="starCanvas"
+          style="
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+          "
+        ></canvas>
 
-            <div class="logo"><a href="home.html"><img class="logo" width="120px" height="50px"
-                        src="../images/starwarspng.png" alt="" /></a>
-            </div>
+        <div class="logo">
+          <a href="home.html"
+            ><img
+              class="logo"
+              width="120px"
+              height="50px"
+              src="../images/starwarspng.png"
+              alt=""
+          /></a>
+        </div>
 
-            <div class="menu-links">
-                <a clas href="home.html"><i class="fa-solid fa-house"></i>&nbsp;&nbsp;Home</a>
-                <a href="filmes.html"><i class="fa-solid fa-clapperboard"></i>&nbsp;&nbsp;Filmes</a>
-                <a href="series.html"><i class="fa-solid fa-film"></i>&nbsp;&nbsp;Séries</a>
-                <a href="ranking.html"><i class="fa-solid fa-ranking-star"></i>&nbsp;&nbsp;Ranking</a>
-                <a href="cadastro.html"><i class="fa-solid fas fa-edit"></i>&nbsp;&nbsp;Cadastro</a>
-            </div>
-
-        </nav>
+        <div class="menu-links">
+          <a clas href="home.html"
+            ><i class="fa-solid fa-house"></i>&nbsp;&nbsp;Home</a
+          >
+          <a href="filmes.html"
+            ><i class="fa-solid fa-clapperboard"></i>&nbsp;&nbsp;Filmes</a
+          >
+          <a href="series.html"
+            ><i class="fa-solid fa-film"></i>&nbsp;&nbsp;Séries</a
+          >
+          <!-- <a href="ranking.html"><i class="fa-solid fa-ranking-star"></i>&nbsp;&nbsp;Ranking</a> -->
+          <a href="cadastro.html"
+            ><i class="fa-solid fas fa-edit"></i>&nbsp;&nbsp;Cadastro</a
+          >
+        </div>
+      </nav>
     </header>
 
     <main class="cadastro-container">
-        <h2>Cadastro de Filmes e Séries</h2>
+      <h2>Cadastro de Filmes e Séries</h2>
 
-        <form id="cadastroForm">
-            <div class="form-group">
-                <label for="tipo">Tipo:</label>
-                <select id="tipo" name="tipo" required>
-                    <option value="filmes">Filme</option>
-                    <option value="series">Série</option>
-                </select>
-            </div>
+      <form id="cadastroForm">
+        <div class="form-group">
+          <label for="tipo">Tipo:</label>
+          <select id="tipo" name="tipo" required>
+            <option value="filmes">Filme</option>
+            <option value="series">Série</option>
+          </select>
+        </div>
 
-            <div class="form-group">
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome" required />
-            </div>
+        <div class="form-group">
+          <label for="nome">Nome:</label>
+          <input type="text" id="nome" name="nome" required />
+        </div>
 
-            <div class="form-group">
-                <label for="sinopse">Sinopse:</label>
-                <textarea id="sinopse" name="sinopse" rows="4"></textarea>
-            </div>
+        <div class="form-group">
+          <label for="sinopse">Sinopse:</label>
+          <textarea id="sinopse" name="sinopse" rows="4"></textarea>
+        </div>
 
-            <div class="form-group">
-                <label for="avaliacaoImdb">Avaliação IMDb (0-10):</label>
-                <input type="number" id="avaliacaoImdb" name="avaliacaoImdb" min="0" max="10" step="1" />
-            </div>
+        <div class="form-group">
+          <label for="avaliacaoImdb">Avaliação IMDb (0-10):</label>
+          <input
+            type="number"
+            id="avaliacaoImdb"
+            name="avaliacaoImdb"
+            min="0"
+            max="10"
+            step="1"
+          />
+        </div>
 
-            <div class="form-group">
-                <label for="avaliacaoTomates">Avaliação Rotten Tomatoes (0-100):</label>
-                <input type="number" id="avaliacaoTomates" name="avaliacaoTomates" min="0" max="100" step="1" />
-            </div>
+        <div class="form-group">
+          <label for="avaliacaoTomates"
+            >Avaliação Rotten Tomatoes (0-100):</label
+          >
+          <input
+            type="number"
+            id="avaliacaoTomates"
+            name="avaliacaoTomates"
+            min="0"
+            max="100"
+            step="1"
+          />
+        </div>
 
-            <div class="form-group">
-                <label for="foto">URL da Foto/Poster:</label>
-                <input type="url" id="foto" name="foto" placeholder="https://exemplo.com/imagem.jpg" />
-            </div>
+        <div class="form-group">
+          <label for="foto">URL da Foto/Poster:</label>
+          <input
+            type="url"
+            id="foto"
+            name="foto"
+            placeholder="https://exemplo.com/imagem.jpg"
+          />
+        </div>
 
-            <div class="form-group">
-                <label for="genero">Gênero:</label>
-                <select name="genero" id="genero">
-                    <option value="" disabled selected>Selecione uma opção</option>
-                    <option value="Acao">Ação</option>
-                    <option value="Aventura">Aventura</option>
-                    <option value="Animação">Animação</option>
-                    <option value="Comedia">Comédia</option>
-                    <option value="Documentario">Documentário</option>
-                    <option value="Drama">Drama</option>
-                    <option value="Fantasia">Fantasia</option>
-                    <option value="Faroeste">Faroeste</option>
-                    <option value="FiccaoCientifica">Ficção Científica</option>
-                    <option value="Romance">Romance</option>
-                    <option value="Suspense">Suspense</option>
-                    <option value="Terror">Terror</option>
-                </select>
+        <div class="form-group">
+          <label for="genero">Gênero:</label>
+          <select name="genero" id="genero">
+            <option value="" disabled selected>Selecione uma opção</option>
+            <option value="Acao">Ação</option>
+            <option value="Aventura">Aventura</option>
+            <option value="Animação">Animação</option>
+            <option value="Comedia">Comédia</option>
+            <option value="Documentario">Documentário</option>
+            <option value="Drama">Drama</option>
+            <option value="Fantasia">Fantasia</option>
+            <option value="Faroeste">Faroeste</option>
+            <option value="FiccaoCientifica">Ficção Científica</option>
+            <option value="Romance">Romance</option>
+            <option value="Suspense">Suspense</option>
+            <option value="Terror">Terror</option>
+          </select>
+        </div>
 
-            </div>
+        <div class="form-group">
+          <label for="avaliacao">Sua Avaliação (0-5):</label>
+          <input
+            type="number"
+            id="avaliacao"
+            name="avaliacao"
+            min="0"
+            max="5"
+            step="1"
+          />
+        </div>
 
-            <div class="form-group">
-                <label for="avaliacao">Sua Avaliação (0-5):</label>
-                <input type="number" id="avaliacao" name="avaliacao" min="0" max="5" step="1" />
-            </div>
+        <div class="form-group">
+          <label for="lancamento">Data de Lançamento:</label>
+          <input type="date" id="lancamento" name="lancamento" />
+        </div>
 
-            <div class="form-group">
-                <label for="lancamento">Data de Lançamento:</label>
-                <input type="date" id="lancamento" name="lancamento" />
-            </div>
+        <div id="campoDuracao" class="form-group">
+          <label for="duracao">Duração do filme:</label>
+          <input type="time" id="duracao" name="duracao" step="60" />
+        </div>
 
-            <div id="campoDuracao" class="form-group">
-                <label for="duracao">Duração do filme:</label>
-                <input type="time" id="duracao" name="duracao" step="60" />
-            </div>
+        <div id="campoSerie" class="form-group-hidden">
+          <div class="form-group">
+            <label for="temporadas">Temporadas:</label>
+            <input type="number" id="temporadas" name="temporadas" min="1" />
+          </div>
+          <div class="form-group">
+            <label for="episodios">Episódios (total):</label>
+            <input type="number" id="episodios" name="episodios" min="1" />
+          </div>
+        </div>
 
-            <div id="campoSerie" class="form-group-hidden">
-                <div class="form-group">
-                    <label for="temporadas">Temporadas:</label>
-                    <input type="number" id="temporadas" name="temporadas" min="1" />
-                </div>
-                <div class="form-group">
-                    <label for="episodios">Episódios (total):</label>
-                    <input type="number" id="episodios" name="episodios" min="1" />
-                </div>
-            </div>
+        <button type="submit" class="btn-submit bg-success text-white">
+          Cadastrar
+        </button>
 
-            <button type="submit" class="btn-submit bg-success text-white">Cadastrar</button>
-
-            <p id="mensagem" class="mensagem-status"></p>
-        </form>
+        <p id="mensagem" class="mensagem-status"></p>
+      </form>
     </main>
     <footer>&copy; 2025 Cine + Turbo. Todos os direitos reservados.</footer>
 
     <script>
-        const canvas = document.getElementById('starCanvas');
-        const ctx = canvas.getContext('2d');
-        let stars = [];
+      const canvas = document.getElementById("starCanvas");
+      const ctx = canvas.getContext("2d");
+      let stars = [];
 
-        function resizeCanvas() {
-            canvas.width = document.querySelector('.nav-menu').offsetWidth;
-            canvas.height = document.querySelector('.nav-menu').offsetHeight;
-        }
+      function resizeCanvas() {
+        canvas.width = document.querySelector(".nav-menu").offsetWidth;
+        canvas.height = document.querySelector(".nav-menu").offsetHeight;
+      }
 
-        window.addEventListener('resize', () => {
-            resizeCanvas();
-            generateStars();
-        });
-
-        function generateStars() {
-            stars = [];
-            for (let i = 0; i < 100; i++) {
-                stars.push({
-                    x: Math.random() * canvas.width,
-                    y: Math.random() * canvas.height,
-                    radius: Math.random() * 1.5,
-                    alpha: Math.random(),
-                    delta: Math.random() * 0.02
-                });
-            }
-        }
-
-        function animateStars() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            for (let star of stars) {
-                ctx.beginPath();
-                ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(255, 255, 255, ${star.alpha})`;
-                ctx.fill();
-                star.alpha += star.delta;
-                if (star.alpha <= 0 || star.alpha >= 1) star.delta *= -1;
-            }
-            requestAnimationFrame(animateStars);
-        }
-
+      window.addEventListener("resize", () => {
         resizeCanvas();
         generateStars();
-        animateStars();
+      });
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target); // remove observador após animar
-                }
-            });
-        }, {
-            threshold: 0.1
-        });
+      function generateStars() {
+        stars = [];
+        for (let i = 0; i < 100; i++) {
+          stars.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            radius: Math.random() * 1.5,
+            alpha: Math.random(),
+            delta: Math.random() * 0.02,
+          });
+        }
+      }
 
-        document.querySelectorAll('.fade-in').forEach(element => {
-            observer.observe(element);
-        });
+      function animateStars() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (let star of stars) {
+          ctx.beginPath();
+          ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(255, 255, 255, ${star.alpha})`;
+          ctx.fill();
+          star.alpha += star.delta;
+          if (star.alpha <= 0 || star.alpha >= 1) star.delta *= -1;
+        }
+        requestAnimationFrame(animateStars);
+      }
+
+      resizeCanvas();
+      generateStars();
+      animateStars();
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target); // remove observador após animar
+            }
+          });
+        },
+        {
+          threshold: 0.1,
+        }
+      );
+
+      document.querySelectorAll(".fade-in").forEach((element) => {
+        observer.observe(element);
+      });
     </script>
 
     <script src="../scritp.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-
+  </body>
 </html>
